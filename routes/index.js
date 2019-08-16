@@ -1,4 +1,5 @@
 const router = require('koa-router')()
+const captcha = require("../Function/utils/captcha")
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
@@ -15,5 +16,7 @@ router.get('/json', async (ctx, next) => {
     title: 'koa2 json'
   }
 })
+
+router.get('/captcha',captcha)
 
 module.exports = router
