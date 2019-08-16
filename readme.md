@@ -2,6 +2,18 @@
 
 ![](./assets/wc3-logo-red.png)
 
+## HOW TO USE
+
+
+```
+git clone https://github.com/wariii-online-judge/front-end.git
+git clone https://github.com/wariii-online-judge/war3oj.git
+cd war3oj
+cp default_config.yaml config.yaml
+# modify config.yaml
+npm run start
+```
+
 
 ## Author
 
