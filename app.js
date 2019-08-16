@@ -11,6 +11,9 @@ const Store = require("./lib/Session_store.js")
 const index = require('./routes/index')
 const users = require('./routes/users')
 
+
+const utils = require("./utils")
+
 global.debug = require('debug')('debug')
 
 // error handler
