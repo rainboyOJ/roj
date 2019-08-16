@@ -1,3 +1,5 @@
+global.debug = require('debug')('debug')
+
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
@@ -7,6 +9,7 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const session = require("koa-session2");
 const Store = require("./lib/Session_store.js")
+const pathFn = require('path')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
@@ -14,7 +17,10 @@ const users = require('./routes/users')
 
 const utils = require("./utils")
 
-global.debug = require('debug')('debug')
+    //== 加载配置
+    global.CONFIG = utils.loadConfig()
+    debug(JSON.stringify(CONFIG,null,4))
+
 
 // error handler
 onerror(app)
@@ -30,9 +36,9 @@ app.use(bodyparser({
 }))
 app.use(json())
 app.use(logger())
-app.use(require('koa-static')(__dirname + '/public'))
+app.use(require('koa-static')(pathFn.resolve(CONFIG.FRONT_END.public)))
 
-app.use(views(__dirname + '/views', {
+app.use(views(pathFn.resolve(CONFIG.FRONT_END.views), {
   extension: 'pug'
 }))
 
