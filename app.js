@@ -5,12 +5,19 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const session = require("koa-session2");
+const Store = require("./lib/Session_store.js")
 
 const index = require('./routes/index')
 const users = require('./routes/users')
 
 // error handler
 onerror(app)
+
+app.use(session({
+    key: "SESSIONID",   //default "koa:sess"
+    store: new Store()
+}));
 
 // middlewares
 app.use(bodyparser({
