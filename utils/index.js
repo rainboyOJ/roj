@@ -1,6 +1,8 @@
 const fs = require("fs")
 const pathFn = require("path")
 
+/* 项目目录 */
+global.__project = pathFn.join(__dirname,"..")
 
 /* =================== 核心函数 ===================*/
 
@@ -78,11 +80,11 @@ var exports = {
     maps_2_deal,
 }
 
-//[> 加载方法 <]
-//maps_2_deal( pathFn.join(__dirname,'methods'),[/^_/],({full_path,basename}) => {
-    //exports[basename] = require(full_path)
-    //console.info(`加载utils方法: ${basename}`)
-//})
+/* 加载方法 */
+maps_2_deal( pathFn.join(__dirname,'methods'),[/^_/],({full_path,basename}) => {
+    exports[basename] = require(full_path)
+    debug(`加载utils方法: ${basename}`)
+})
 
 module.exports =  exports
 
