@@ -18,5 +18,10 @@ router.get('/json', async (ctx, next) => {
 })
 
 router.get('/captcha',captcha)
+router.get('/register',async (ctx,next)=>{
+  await ctx.render('register', {
+    title: 'Hello Koa 2!'
+  })
+})
 
 module.exports = router
