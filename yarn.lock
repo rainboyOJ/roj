@@ -1401,6 +1401,13 @@ koa-onerror@^4.1.0:
     escape-html "^1.0.3"
     stream-wormhole "^1.1.0"
 
+"koa-route-ex@https://github.com/wariii-online-judge/koa-route-ex.git":
+  version "1.0.2"
+  resolved "https://github.com/wariii-online-judge/koa-route-ex.git#46f3532bbf551e2940c11f94823d011d406cb7c9"
+  dependencies:
+    debug "^4.1.1"
+    path-to-regexp "^3.0.0"
+
 koa-router@^7.4.0:
   version "7.4.0"
   resolved "https://registry.npm.taobao.org/koa-router/download/koa-router-7.4.0.tgz#aee1f7adc02d5cb31d7d67465c9eacc825e8c5e0"
@@ -1912,6 +1919,11 @@ path-to-regexp@^1.1.1:
   integrity sha1-Wf3g9DW62suhA6hOnTvGTpa5k30=
   dependencies:
     isarray "0.0.1"
+
+path-to-regexp@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-3.0.0.tgz#c981a218f3df543fa28696be2f88e0c58d2e012a"
+  integrity sha1-yYGiGPPfVD+ihpa+L4jgxY0uASo=
 
 pify@^3.0.0:
   version "3.0.0"
