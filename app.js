@@ -2,6 +2,7 @@ global.debug = require('debug')('debug')
 
 const Koa = require('koa')
 const app = new Koa()
+const favicon = require("koa-favicon")
 const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
@@ -23,6 +24,7 @@ const utils = require("./utils")
 // error handler
 onerror(app)
 
+
 app.use(session({
     key: "SESSIONID",   //default "koa:sess"
     store: new Store()
@@ -34,6 +36,7 @@ app.use(bodyparser({
 }))
 app.use(json())
 app.use(logger())
+app.use(favicon(pathFn.resolve(CONFIG.FRONT_END.public+'/images/favicon.png')))
 app.use(require('koa-static')(pathFn.resolve(CONFIG.FRONT_END.public)))
 
 app.use(views(pathFn.resolve(CONFIG.FRONT_END.views), {
