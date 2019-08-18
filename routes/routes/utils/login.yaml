@@ -1,4 +1,8 @@
-- "utils.renderData"
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: 
+    jump: '/register'
 - 
   namespace: 'utils'
   name: 'title'

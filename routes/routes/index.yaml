@@ -1,5 +1,8 @@
 # 渲染主页
-- "utils.renderData"
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: {}
 - 
   namespace: 'utils'
   name: 'title'
