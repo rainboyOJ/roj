@@ -2,4 +2,18 @@
     url: '/'
     title: '首页'
     path: "/routes/index.yaml"
+# ============ 登录/注册 ============
+- 
+    url: '/login'
+    title: '登录'
+    path: '/routes/utils/login.yaml'
+- 
+    url: '/register'
+    title: '注册'
+    path: '/routes/utils/register.yaml'
+# ============ 登录/注册 END ============
+- 
+    url: '/captcha'
+    title: '验证码'
+    path: '/routes/utils/captcha.yaml'
 

@@ -1,0 +1,6 @@
+- "utils.renderData"
+- "utils.title"
+- 
+  namespace: 'utils'
+  name: 'Render'
+  argument: 'register'

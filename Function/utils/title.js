@@ -4,4 +4,5 @@
 
 module.exports = async function title(ctx,next){
     ctx.renderData.title = ''
+    await next()
 }

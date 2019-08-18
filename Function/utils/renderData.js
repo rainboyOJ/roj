@@ -4,4 +4,5 @@
 
 module.exports = async function renderData(ctx,next){
     ctx.renderData = {}
+    await next()
 }

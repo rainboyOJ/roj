@@ -26,10 +26,12 @@ module.exports =  function (koaApp){
     for(let O of IndexYaml){
         let {url,path,title} = O
         let middlewares = loadYaml(routes_base + path)
+        debug('路由加载:',title)
         routes.push( RouterIns.create(url,middlewares))
     }
 
     for( let route of routes){
+        debug(route)
         koaApp.use(route.routes())
     }
 }
