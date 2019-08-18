@@ -50,12 +50,8 @@ app.use(async (ctx, next) => {
 
 // routes
 
-var {index, register, login, captcha }= require("./routes/ex")
+require("./routes")(app)
 
-app.use(index.routes())
-app.use(register.routes())
-app.use(login.routes())
-app.use(captcha.routes())
 
 
 
