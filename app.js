@@ -11,8 +11,6 @@ const session = require("koa-session2");
 const Store = require("./lib/Session_store.js")
 const pathFn = require('path')
 
-const index = require('./routes/index')
-const users = require('./routes/users')
 
 
 const utils = require("./utils")
@@ -51,12 +49,20 @@ app.use(async (ctx, next) => {
 })
 
 // routes
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
+
+var {index, register, login, captcha }= require("./routes/ex")
+
+app.use(index.routes())
+app.use(register.routes())
+app.use(login.routes())
+app.use(captcha.routes())
+
+
 
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
 });
+
 
 module.exports = app
