@@ -14,6 +14,21 @@ cp default_config.yaml config.yaml
 npm run start
 ```
 
+## 目录
+
+```
+.
+├── app.js      入口
+├── assets      资源
+├── bin         启动文件
+├── DB          数据函数库
+├── Function    路由函数
+├── lib         函数库
+├── routes      路由表
+├── utils       工具函数库
+└── default_config.yaml 默认配置
+```
+
 
 ## Author
 
