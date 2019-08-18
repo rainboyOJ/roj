@@ -1,4 +1,9 @@
 # 渲染主页
+- "utils.renderData"
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
 - 
   argument: index
   name: Render

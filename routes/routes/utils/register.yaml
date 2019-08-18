@@ -1,5 +1,8 @@
 - "utils.renderData"
-- "utils.title"
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
 - 
   namespace: 'utils'
   name: 'Render'
