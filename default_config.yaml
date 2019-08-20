@@ -1,8 +1,10 @@
 # SITE
 SITE:
     SALT: 'WAR3OJ_SALT'
-    default_admin_name: 'root'  # 默认超级管理员
-    default_admin_password: 'password'
+    default_admin: # 默认超级管理员
+        username: 'root'
+        password: 'password'
+        avatar: '/images/admin/avatar.png'
 # front end path
 FRONT_END: 
     public: 'foo/'  # 静态资源

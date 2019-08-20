@@ -9,7 +9,7 @@ class DB {
         this.connection = mongoose.connection
 
         this.connection.once('open',()=>{
-            console.log("=======: 数据库打开成功")
+            console.log(" ==●﹏●==: 数据库打开成功")
         })
 
         this.model = {}
@@ -20,9 +20,21 @@ class DB {
             self.model[basename] = mongoose.model(basename,require(full_path))
             debug(`注册model成功,名字:${basename} 路径:${rpath}/${basename} `,__filename,__line)
         })
+
     }
 
 }
+
+/* load methods */
+utils.maps_2_deal(
+    pathFn.join(__dirname,'methods'),
+    [/^_/],
+    ({full_path,basename,rpath})=>{
+        let parent = pathFn.basename(rpath)
+        DB.prototype[parent+basename] = require(full_path)
+        debug(`注册DB.prototype成功,名字:${parent+basename} 路径:${rpath}/${basename}.js`,__filename,__line)
+    }
+)
 
 DB.getInstance = function({addr,opts}){
     if(!DB.singleton){

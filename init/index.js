@@ -27,13 +27,21 @@ Object.defineProperty(global, '__line', {
 
 const utils = require("../utils")
 
-    //== 加载配置
-    global.CONFIG = utils.loadConfig()
-    debug(JSON.stringify(CONFIG,null,4))
+//== 加载配置
+global.CONFIG = utils.loadConfig()
+debug(JSON.stringify(CONFIG,null,4))
+
+global.password_salt = function(password){
+    return utils.SALT(password,CONFIG.SITE.SALT).password
+}
 
 
 const DB = require('../DB')
 global.db = DB.getInstance(CONFIG.MONGODB)
+
+/* 创建默认管理员 */
+//db.admincrateSuper()
+db.admincreateSuper(CONFIG.SITE.default_admin)
 
 module.exports = async function INIT(koaApp){
 }
