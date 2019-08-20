@@ -20,6 +20,11 @@
 
 
 # ============ Admin ============
+    #==== 主页 ====
+- 
+    url: "/admin"
+    title: '管理员'
+    path: '/routes/admin/index.yaml'
     #==== 登录 ====
 - 
     url: "/admin/login"

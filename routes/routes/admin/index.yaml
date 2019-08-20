@@ -1,0 +1,13 @@
+# 渲染主页
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: {}
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
+- 
+  argument: "admin/index"
+  name: Render
+  namespace: utils
