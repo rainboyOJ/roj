@@ -1,0 +1,4 @@
+- "utils.captcha_verify"
+- 
+  namespace: 'admin'
+  name: 'login'

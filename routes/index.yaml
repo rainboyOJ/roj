@@ -17,3 +17,18 @@
     title: '验证码'
     path: '/routes/utils/captcha.yaml'
 
+
+
+# ============ Admin ============
+    #==== 登录 ====
+- 
+    url: "/admin/login"
+    title: '管理员登录'
+    path: '/routes/admin/login.yaml'
+    #==== 登录 POST====
+- 
+    url: "/admin/login"
+    method: "POST"
+    title: '管理员登录-POST'
+    path: '/routes/admin/login_post.yaml'
+    
