@@ -1,2 +1,31 @@
+# SITE
+SITE:
+    SALT: 'WAR3OJ_SALT'
+    default_admin_name: 'root'  # 默认超级管理员
+    default_admin_password: 'password'
 # front end path
-FRONT_END: 'foo/bar'
+FRONT_END: 
+    public: 'foo/'  # 静态资源
+    views: 'bar/'   # pug 视图
+
+# koa-session2 配置
+SESSION: 
+
+CAPTCHA:
+    width: 90
+    height: 40
+    fontSize: 45
+    size: 4 # 验证码长度
+    ignoreChars: "0o1iIlL" # 验证码字符中排除 0o1i
+    noise: 2 # 干扰线条的数量
+    #color: true # 验证码的字符是否有颜色，默认没有，如果设定了背景，则默认有
+    #background: '#aaa' # 验证码图片背景颜色
+
+# 数据库
+MONGODB:
+    addr: mongodb://localhost/war3oj
+    opts: 
+        useNewUrlParser: true
+        useCreateIndex: true # https://github.com/Automattic/mongoose/issues/6890#issuecomment-416410444
+
+
