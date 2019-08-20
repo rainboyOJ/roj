@@ -18,7 +18,7 @@ class DB {
         let self = this
         utils.maps_2_deal( pathFn.join(__dirname,'model'),[/^_/],({full_path,basename,rpath})=>{
             self.model[basename] = mongoose.model(basename,require(full_path))
-            console.info(`注册model成功,名字:${basename} 路径:${rpath}/${basename} `,__filename,__line)
+            debug(`注册model成功,名字:${basename} 路径:${rpath}/${basename} `,__filename,__line)
         })
     }
 
