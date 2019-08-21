@@ -1,0 +1,5 @@
+- "user.logout"
+- 
+  namespace: 'utils'
+  name: 'redirect'
+  argument: '/register'

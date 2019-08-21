@@ -17,6 +17,12 @@
     title: '验证码'
     path: '/routes/utils/captcha.yaml'
 
+# ============ User ============
+- 
+    url: "/logout"
+    title: '登出'
+    path: '/routes/user/logout.yaml'
+    #==== 登录 ====
 
 
 # ============ Admin ============
