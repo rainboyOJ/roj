@@ -1,0 +1,18 @@
+# 渲染主页
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: {}
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
+- 'admin.userInfo'
+- 
+  namespace: 'utils'
+  name: 'redirect'
+  argument: '/register'
+- 
+  argument: "admin/inviteCode_create"
+  name: Render
+  namespace: utils

@@ -1,0 +1,16 @@
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: {}
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
+- 'admin.userInfo'
+- 
+  namespace: 'utils'
+  name: 'redirect'
+  argument: '/register'
+- 
+  namespace: 'admin'
+  name: 'inviteCode_create'

@@ -42,4 +42,15 @@
     method: "POST"
     title: '管理员登录-POST'
     path: '/routes/admin/login_post.yaml'
+    #==== 创建 invite code====
+- 
+    url: "/admin/invitecode/create"
+    title: '创建 invitecode'
+    path: '/routes/admin/inviteCode_create.yaml'
+- 
+    url: "/admin/invitecode/create"
+    method: "POST"
+    title: '创建 invitecode POST'
+    path: '/routes/admin/inviteCode_create_post.yaml'
+    
     
