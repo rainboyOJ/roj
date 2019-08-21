@@ -12,6 +12,8 @@ FRONT_END:
 
 # koa-session2 配置
 SESSION: 
+    key: "MYOJ"
+    maxAge: 604800000 #1000 * 7*24*60*60
 
 CAPTCHA:
     width: 90

@@ -21,10 +21,12 @@ require("./init")(app)
 onerror(app)
 
 
-app.use(session({
-    key: "SESSIONID",   //default "koa:sess"
-    store: new Store()
-}));
+app.use(session( 
+    Object.assign(
+        CONFIG.SESSION,
+        { store: new Store() }
+    ) 
+));
 
 // middlewares
 app.use(bodyparser({
