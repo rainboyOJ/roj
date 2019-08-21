@@ -68,7 +68,9 @@ require("./routes")(app)
 
 // error-handling
 app.on('error', (err, ctx) => {
-  console.error('server error', err, ctx)
+    debug(err)
+    debug(err.message)
+  //console.error('server error', err, ctx)
 });
 
 

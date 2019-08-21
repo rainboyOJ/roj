@@ -9,6 +9,10 @@
   argument: ''
 - 'admin.userInfo'
 - 
+  namespace: 'utils'
+  name: 'redirect'
+  argument: '/register'
+- 
   argument: "admin/index"
   name: Render
   namespace: utils

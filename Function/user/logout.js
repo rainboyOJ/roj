@@ -8,5 +8,6 @@ module.exports = async function logout(ctx,next){
         ctx.session.admin_login = null
         ctx.session.admin_id = null
     }
+    ctx.go_redirect = true
     await next()
 }
