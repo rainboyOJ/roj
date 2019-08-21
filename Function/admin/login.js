@@ -16,8 +16,14 @@ module.exports = async function login(ctx,next){
             password:0
         }
     })
-    if( doc )
-        ctx.body = doc.toObject()
+    if( doc ){
+        ctx.session.admin_login = true
+        ctx.session.admin_id = doc._id
+        ctx.body = {
+            status:0,
+            message:"ok"
+        }
+    }
     else
         ctx.body = {
             status:-1,

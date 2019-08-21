@@ -10,6 +10,7 @@ const logger = require('koa-logger')
 const session = require("koa-session2");
 const Store = require("./lib/Session_store.js")
 const pathFn = require('path')
+const md5 = require("md5")
 
 /* ========= 初始化 =========*/
 require("./init")(app)
@@ -35,7 +36,19 @@ app.use(favicon(pathFn.resolve(CONFIG.FRONT_END.public+'/images/favicon.png')))
 app.use(require('koa-static')(pathFn.resolve(CONFIG.FRONT_END.public)))
 
 app.use(views(pathFn.resolve(CONFIG.FRONT_END.views), {
-  extension: 'pug'
+    extension: 'pug',
+    options:{
+        /*
+         *filters:{
+         *    'email2avatar': function(email){
+         *        return CONFIG.AVATAR_CDN.replace('{md5}',md5(email))
+         *    }
+         *},
+         */
+        'email2avatar': function(email){
+            return CONFIG.AVATAR_CDN.replace('{md5}',md5(email))
+        }
+    }
 }))
 
 // logger

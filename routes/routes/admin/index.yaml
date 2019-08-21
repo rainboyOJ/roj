@@ -7,6 +7,7 @@
   namespace: 'utils'
   name: 'title'
   argument: ''
+- 'admin.userInfo'
 - 
   argument: "admin/index"
   name: Render
