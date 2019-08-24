@@ -9,4 +9,4 @@
   argument: '/register'
 - 
   namespace: 'admin'
-  name: 'inviteCode_create'
+  name: 'inviteCode_list_data'

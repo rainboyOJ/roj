@@ -9,4 +9,7 @@
   argument: '/register'
 - 
   namespace: 'admin'
-  name: 'inviteCode_create'
+  name: 'delDocByID'
+  argument: 
+    model: 'invite'
+    is_del: false

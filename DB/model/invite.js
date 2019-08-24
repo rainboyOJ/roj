@@ -23,5 +23,6 @@ inviteSchema.virtual('expire').get(function(){
     return !moment().isBefore(this.expireAt); // true
 })
 inviteSchema.index({inviteCode: 1});
+inviteSchema.set('toObject', { virtuals: true } )
 
 module.exports = inviteSchema

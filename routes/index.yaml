@@ -52,5 +52,16 @@
     method: "POST"
     title: '创建 invitecode POST'
     path: '/routes/admin/inviteCode_create_post.yaml'
-    
-    
+- 
+    url: "/admin/invitecode/del"
+    method: "POST"
+    title: '删除 invitecode POST'
+    path: '/routes/admin/inviteCode_del_post.yaml'
+- 
+    url: "/admin/invitecode/list"
+    title: '邀请码列表'
+    path: '/routes/admin/inviteCode_list.yaml'
+- 
+    url: "/admin/invitecode/list/data"
+    title: '邀请码列表-数据'
+    path: '/routes/admin/inviteCode_list_data.yaml'
