@@ -1,6 +1,7 @@
 const {loadYaml,maps_2_deal}= require('../utils')
 const pathFn  = require('path')
-const RouterIns = require("koa-route-ex")
+const routerIns = require("koa-route-ex")
+const RouterIns = new routerIns()
 
 const routes_base = pathFn.join(__project , '/routes')
 const methods_base = pathFn.join(__project,'/Function')

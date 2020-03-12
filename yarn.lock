@@ -1435,9 +1435,9 @@ koa-onerror@^4.1.0:
     escape-html "^1.0.3"
     stream-wormhole "^1.1.0"
 
-"koa-route-ex@https://github.com/wariii-online-judge/koa-route-ex.git":
-  version "1.0.2"
-  resolved "https://github.com/wariii-online-judge/koa-route-ex.git#46f3532bbf551e2940c11f94823d011d406cb7c9"
+"koa-route-ex@https://github.com/rainboyOJ/koa-route-ex":
+  version "1.0.3"
+  resolved "https://github.com/rainboyOJ/koa-route-ex#fa921050019cbb79e3677e986fdf79ff4410eb2e"
   dependencies:
     debug "^4.1.1"
     path-to-regexp "^3.0.0"
@@ -2009,9 +2009,9 @@ path-parse@^1.0.6:
   integrity sha1-1i27VnlAXXLEc37FhgDp3c8G0kw=
 
 path-to-regexp@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-3.0.0.tgz#c981a218f3df543fa28696be2f88e0c58d2e012a"
-  integrity sha1-yYGiGPPfVD+ihpa+L4jgxY0uASo=
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-3.2.0.tgz#fa7877ecbc495c601907562222453c43cc204a5f"
+  integrity sha1-+nh37LxJXGAZB1YiIkU8Q8wgSl8=
 
 pify@^3.0.0:
   version "3.0.0"
