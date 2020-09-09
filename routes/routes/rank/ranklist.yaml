@@ -1,0 +1,17 @@
+# 渲染rankList
+- 
+  namespace: 'user'
+  name: 'redirect_not_logined' # 如果没有登录就redirect 到/
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: "ctx.session"
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
+- "rank.rankList"
+- 
+  argument: "rank"
+  name: Render
+  namespace: utils

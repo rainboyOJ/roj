@@ -81,7 +81,7 @@ var exports = {
 }
 
 /* 加载方法 */
-maps_2_deal( pathFn.join(__dirname,'methods'),[/^_/],({full_path,basename}) => {
+maps_2_deal( pathFn.join(__dirname,'methods'),[/^_/,/\.swp$/],({full_path,basename}) => {
     exports[basename] = require(full_path)
     debug(`加载utils方法: ${basename}`)
 })

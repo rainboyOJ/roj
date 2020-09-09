@@ -1,0 +1,13 @@
+# 渲染404
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: "ctx.session"
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
+- 
+  argument: "404"
+  name: Render
+  namespace: utils

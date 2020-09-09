@@ -28,6 +28,8 @@ var _Schema  = new Schema({
     following_count: { type: Number, default: 0 },      // 追随别人的数量
     collect_topic_count: { type: Number, default: 0 },  // 收藏的topic数量
 
+    rank:{type:Number,default :0},                       // 积分，做题目，比赛，发布题目解析，等得到理解
+
     is_del:{type:Boolean,default:false} //是否删除
 })
 

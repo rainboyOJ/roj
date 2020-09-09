@@ -25,6 +25,12 @@ Object.defineProperty(global, '__line', {
   }
 });
 
+Object.defineProperty(global, '__function', {
+  get: function(){
+    return __stack[1].getFunctionName();
+  }
+});
+
 const utils = require("../utils")
 
 //== 加载配置
@@ -42,6 +48,10 @@ global.db = DB.getInstance(CONFIG.MONGODB)
 /* 创建默认管理员 */
 //db.admincrateSuper()
 db.admincreateSuper(CONFIG.SITE.default_admin)
+
+/* 创建测试题目 A + B problem */
+require("./create_a+b_problem.js")()
+
 
 module.exports = async function INIT(koaApp){
 }

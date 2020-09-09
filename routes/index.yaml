@@ -6,11 +6,21 @@
 - 
     url: '/login'
     title: '登录'
-    path: '/routes/utils/login.yaml'
+    path: '/routes/user/login.yaml'
+- 
+    url: '/login'
+    title: '登录POST'
+    method: 'POST'
+    path: '/routes/user/login_post.yaml'
 - 
     url: '/register'
     title: '注册'
-    path: '/routes/utils/register.yaml'
+    path: '/routes/user/register.yaml'
+- 
+    url: '/register'
+    method: "POST"
+    title: '注册'
+    path: '/routes/user/register_post.yaml'
 # ============ 登录/注册 END ============
 - 
     url: '/captcha'
@@ -22,7 +32,68 @@
     url: "/logout"
     title: '登出'
     path: '/routes/user/logout.yaml'
-    #==== 登录 ====
+    #==== 登出 ====
+
+- 
+    url: "/userinfo/:uid?"
+    title: '用户信息'
+    path: '/routes/user/info.yaml'
+    #==== 用户信息 ====
+    
+# ============ Probelm ============
+- 
+    url: "/problem/:pid"
+    title: '题目'
+    path: '/routes/problem/problem.yaml'
+    #==== 题目显示 ====
+- 
+    url: "/problem/judge"
+    title: '题目评测'
+    method: "POST"
+    path: '/routes/problem/judge.yaml'
+    #==== 题目列表 ====
+- 
+    url: "/problems"
+    title: '题目列表'
+    path: '/routes/problem/problemList.yaml'
+    #==== 题目列表 ====
+    #
+- 
+    url: "/problem/:pid/testdata"
+    title: '数据下载'
+    path: '/routes/problem/testdata.yaml'
+    #==== 题目列表 ====
+- 
+    url: "/problem/:pid/testdata/download/:file?"
+    title: '数据下载'
+    path: '/routes/problem/download.yaml'
+    #==== 数据下载 ====
+
+# ============ Sub ============
+- 
+    url: "/submissions"
+    title: '评测列表'
+    path: '/routes/sub/subList.yaml'
+    #==== 评测列表 ====
+- 
+    url: "/submission/:sid"
+    title: '评测结果'
+    path: '/routes/sub/sub.yaml'
+    #==== 评测结果 ====
+- 
+    url: "/is-judge-end"
+    title: '评测是否结束'
+    method: "POST"
+    path: '/routes/sub/isJudgeEnd.yaml'
+    #==== 评测是否结束 ====
+
+
+# ============ Rank ============
+- 
+    url: "/ranklist"
+    title: '天梯'
+    path: '/routes/rank/ranklist.yaml'
+    #==== 评测是否结束 ====
 
 
 # ============ Admin ============
@@ -42,11 +113,15 @@
     method: "POST"
     title: '管理员登录-POST'
     path: '/routes/admin/login_post.yaml'
+- 
+    url: "/admin/logout"
+    title: '管理员登出'
+    path: '/routes/admin/logout.yaml'
     #==== 创建 invite code====
 - 
-    url: "/admin/invitecode/create"
-    title: '创建 invitecode'
-    path: '/routes/admin/inviteCode_create.yaml'
+    url: "/admin/invitecode"
+    title: '邀请码管理'
+    path: '/routes/admin/inviteCode.yaml'
 - 
     url: "/admin/invitecode/create"
     method: "POST"
@@ -65,3 +140,20 @@
     url: "/admin/invitecode/list/data"
     title: '邀请码列表-数据'
     path: '/routes/admin/inviteCode_list_data.yaml'
+
+    # ============= 题目管理 =============
+- 
+    url: "/admin/problem/create"
+    title: '创建题目'
+    path: '/routes/admin/problem_create.yaml'
+- 
+    url: "/admin/problem/create"
+    method: 'POST'
+    title: '创建题目'
+    path: '/routes/admin/problem_create_post.yaml'
+
+    # ============= 404 =============
+- 
+    url: "/404"
+    title: '404'
+    path: '/routes/404.yaml'

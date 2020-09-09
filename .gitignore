@@ -88,3 +88,6 @@ typings/
 .dynamodb/
 
 config.yaml
+*.swp
+1.js
+1.md

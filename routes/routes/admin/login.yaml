@@ -1,8 +1,9 @@
+- "admin.redirect_logined"
 - 
   namespace: 'utils'
   name: 'renderData'
   argument: 
-    jump: '/register'
+    jump: '/'
 - 
   namespace: 'utils'
   name: 'title'

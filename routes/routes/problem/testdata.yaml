@@ -1,0 +1,17 @@
+# 渲染testdownlaod
+- 
+  namespace: 'user'
+  name: 'redirect_not_logined' # 如果没有登录就redirect 到/
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: "ctx.session"
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
+- "problem.test_data_list"
+- 
+  argument: "testDataShow"
+  name: Render
+  namespace: utils
