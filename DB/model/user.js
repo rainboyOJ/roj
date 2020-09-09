@@ -11,7 +11,7 @@ var _Schema  = new Schema({
     create_at:{type:Date,default:Date.now}, //加入的时间
     update_at: { type: Date, default: Date.now },
 
-    avatar:String,
+    //avatar:String,
 
     posted:{type:Array,default:[],ref:'problem'}, //提交的题目id
     passed:{type:Array,default:[],ref:"problem"},  //通过的题目

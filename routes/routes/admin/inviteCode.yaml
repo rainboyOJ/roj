@@ -1,0 +1,14 @@
+# 渲染邀请码页
+- "admin.redirect_not_logined"
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: {}
+- 
+  namespace: 'utils'
+  name: 'title'
+  argument: ''
+- 
+  namespace: utils
+  name: Render
+  argument: "admin/invitecode"

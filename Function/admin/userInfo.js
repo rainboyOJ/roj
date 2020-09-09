@@ -13,12 +13,6 @@ module.exports = async function userInfo(ctx,next){
         ctx.renderData.user = info
     }
     else
-        //ctx.throw(500,"没要找到这个用户!")
-        //ctx.recdirect('/register')
         ctx.go_redirect = true
-        //ctx.body = {
-            //status:-1,
-            //message:''
-        //}
     await next()
 }

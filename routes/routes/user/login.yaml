@@ -1,4 +1,7 @@
 - 
+  namespace: 'user'
+  name: 'redirect_logined'
+- 
   namespace: 'utils'
   name: 'renderData'
   argument: 

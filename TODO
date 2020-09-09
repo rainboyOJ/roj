@@ -1,0 +1,21 @@
+- [ ] admin 更新题目,就用problem_create.pug,不过要处理可以更新题面,不更新数据的情况,这里使用询问框:是否不上传数据
+- [ ] 题目的最佳提交
+- [ ] user查看评测历史
+- [ ] user查看评测结果
+- [ ] 核心对于返回的评测数据的处理 使用koa route_ex
+- [ ] user提交评测
+- [ ] admin 批量上传题目的脚本
+- [ ] 完善judgesever docker的rsync
+- [ ] user的题目列表
+- [x] user的题目显示
+- [x] admin的登出与check_login
+- [x] 默认创建一个a+b的题目
+- [x] admin 上传题目
+- [x] 用户的个人界面
+- [x] 用户的登出
+- [x] 用户的登录,把用户名放到ctx.session里,不用每次请求都查询db
+- [x] 用户的注册
+- [x] 创建邀请码
+- [x] layui中集成 axios
+- [x] admin的页面
+- [X] admin/login PUG模板

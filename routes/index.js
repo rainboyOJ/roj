@@ -1,6 +1,7 @@
 const {loadYaml,maps_2_deal}= require('../utils')
 const pathFn  = require('path')
 const routerIns = require("koa-route-ex")
+const {debug,table} = require('console')
 const RouterIns = new routerIns()
 
 const routes_base = pathFn.join(__project , '/routes')
@@ -8,21 +9,27 @@ const methods_base = pathFn.join(__project,'/Function')
 
 /* 加载 methods */
 function load_methods(){
-    maps_2_deal(methods_base,[/^_/],(d)=> {
+    Routers_methods = []
+    maps_2_deal(methods_base,[/^_/,/\.swp$/],(d)=> {
         let {rpath,full_path} = d
-        debug(rpath,full_path)
+        //debug(rpath,full_path)
+        Routers_methods.push({"路径":pathFn.relative(__project,full_path),"namespace":rpath,"名字":pathFn.basename(full_path).replace(".js","") })
         RouterIns.register(require(full_path),rpath)
     })
+    return Routers_methods
 }
 
 module.exports =  function (koaApp){
 
-    load_methods()
+    let Routers_methods =  load_methods()
+    debug("============= 路由实例中注册的方法:")
+    table(Routers_methods)
 
 
     const IndexYaml = loadYaml(routes_base + '/index.yaml')
 
     var routes  = []
+    var routes_table = []
 
     for(let O of IndexYaml){
         let {url,path,title,method} = O
@@ -38,8 +45,11 @@ module.exports =  function (koaApp){
         if(method){
             routes[routes.length - 1].setMethod(method)
         }
-        debug('路由加载:',title, "url: ",url,"method", method ||  'GET')
+
+        //debug('路由加载:',title, "url: ",url,"method", method ||  'GET')
+        routes_table.push({'路由名':title, "url": url,"method": method ||  'GET'})
     }
+    table(routes_table)
 
     for( let route of routes){
         koaApp.use(route.routes())

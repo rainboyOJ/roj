@@ -1,4 +1,6 @@
 # 渲染主页
+#- 'admin.userInfo'
+- 'admin.redirect_not_logined'
 - 
   namespace: 'utils'
   name: 'renderData'
@@ -7,11 +9,6 @@
   namespace: 'utils'
   name: 'title'
   argument: ''
-- 'admin.userInfo'
-- 
-  namespace: 'utils'
-  name: 'redirect'
-  argument: '/register'
 - 
   argument: "admin/index"
   name: Render

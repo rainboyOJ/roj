@@ -19,14 +19,14 @@ module.exports = async function inviteCode_list_data(ctx,next){
             limit
         }
     })
+    let count = await db.pageList({model:'invite',query:{}}).count()
     let _docs = docs.map( (d)=> { return d.toObject()})
     //debug(_docs)
     ctx.body = {
         code: 0,
         status: 0,
         msg:"ok",
-        height:512,
-        count:1000,
+        count:count,
         data: _docs
     }
     

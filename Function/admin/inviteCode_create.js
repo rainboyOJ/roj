@@ -3,19 +3,18 @@
  * */
 const moment = require("moment")
 module.exports = async function inviteCode_create(ctx,next){
+  debug(ctx.request.body)
     let {number,expireAt} = ctx.request.body
     debug(number,expireAt)
 
-    number = parseInt(number)
+    number = number ? parseInt(number) : 1
+    expireAt = expireAt ? parseInt(expireAt) : 3
     expireAt = moment().add(parseInt(expireAt),'d').toDate()
 
-    let docs = []
-    for( let i = 0 ;i< parseInt(number); i++){
-        docs.push({expireAt})
-    }
-
+    let docs = Array(number).fill( {expireAt})
+    debug("number",number)
+    debug(docs)
     let create_docs = await db.model['invite'].create(docs)
-    
     if( create_docs){
         ctx.body = {
             status:0,

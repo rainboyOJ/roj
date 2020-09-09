@@ -4,9 +4,9 @@
   argument: {}
 - 'admin.userInfo'
 - 
-  namespace: 'utils'
+  namespace: 'utils' # 如果没有管理员的信息,就redirect 到 /
   name: 'redirect'
-  argument: '/register'
+  argument: '/'
 - 
-  namespace: 'admin'
+  namespace: 'admin'  # 发送到 inviteCode_create 这个路径
   name: 'inviteCode_create'
