@@ -6,8 +6,6 @@
     "start": "node bin/www",
     "debug": "DEBUG=debug ./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -40,7 +38,6 @@
     "voucher-code-generator": "^1.1.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1",
-    "vuepress": "^1.3.1"
+    "nodemon": "^1.19.1"
   }
 }
