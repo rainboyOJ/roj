@@ -3,7 +3,8 @@
 - [ ] 完善sublist的查询
 - [ ] 注意button全部用sub页面的 [复制] 的样式替换了
 - [ ] frond-end 使用的cdn可以通过配置,转成纯本地,也可以cdn
-- [ ] redis缓存,对problem_list,sublist,problem, submission(非juding状态缓存)
+- [ ] upload_data_force 与update_problem_force 要有区别
+- [x] redis缓存,对problem_list,sublist,problem, submission(非juding状态缓存)
 - [x] 数据下载
 - [x] problem info populate "bestSub.uid" select "username realname email"
 - [x] 完成对题目提交后的各种处理

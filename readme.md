@@ -2,17 +2,20 @@
 
 ![](./assets/wc3-logo-red.png)
 
-## HOW TO USE
+## 快速安装
 
+本机已安装：
+
+- redis
+- mongodb 3.6
+- nodejs >12.0
+- zip
+- unzip
 
 ```
-git clone https://github.com/wariii-online-judge/front-end.git
-git clone https://github.com/wariii-online-judge/war3oj.git
-# redis
-# mongodb 3.6
-# > nodejs 12.0
-apt install unzip
-cd war3oj
+git clone https://github.com/roj/front-end.git
+git clone https://github.com/roj/roj.git
+cd roj
 cp default_config.yaml config.yaml
 # modify config.yaml
 npm run start

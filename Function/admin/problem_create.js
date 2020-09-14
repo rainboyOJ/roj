@@ -2,12 +2,14 @@
  * 创建 邀请码
  * */
 const moment = require("moment") 
-const {unlinkSync,mkdirSync,existsSync,rmdirSync,renameSync} = require("fs")
+const {unlinkSync,mkdirSync,existsSync,rmdirSync,renameSync,copyFileSync} = require("fs")
 const pathFn = require("path")
 const {execSync} = require("child_process")
 const {join} = require('path')
 const Joi = require('joi')
 const {debug} = require("console")
+
+
 const schema = Joi.object({
     pid: Joi.number()
         .integer()
@@ -42,6 +44,8 @@ const schema = Joi.object({
         .required() 
     ,spj: Joi.string()
         .valid('default')
+    ,is_del:Joi.boolean()
+        .default(false)
         //.valid(...['INNER','default','spj.cpp','spj.js','spj.py', "acmp","caseicmp","casewcmp","fcmp", "hcmp","lcmp","rcmp", "rcmp6","rncmp","wcmp", "bcmp","casencmp","dcmp",,,"fcmp2","icmp","ncmp","rcmp4","rcmp9","uncmp","yesno" ])
     ,source:Joi.string().allow('').optional()
 })
@@ -49,6 +53,7 @@ const schema = Joi.object({
 
 module.exports = async function problem_create(ctx,next){
   //1.查检参数
+  //debug(ctx.request.body)
   let {pid,time,memory,stack,spj,level,title,content,source} = ctx.request.body
   const { error, value } = schema.validate({pid,time,memory,stack,spj,level,title,content,source});
   if( error){
@@ -65,7 +70,7 @@ module.exports = async function problem_create(ctx,next){
     let data_path_exists = existsSync(data_path)
     //debug(file.path)
     if( data_path_exists ){  //数据目录存在
-      if( ctx.request.body.force_update ){ //强制更新
+      if( ctx.request.body.upload_force){ //强制上传数据
         rmdirSync(data_path,{recursive:true})
       }
       else {
@@ -89,14 +94,18 @@ module.exports = async function problem_create(ctx,next){
       }
       return
     }
-    //unlinkSync(file.path) //删除上传的文件
     //把上传的文件移动到data_path_zip 目录
     
-    fs.renameSync(file.path,pathFn.join(CONFIG.DATA_PATH_ZIP,`${pid}.zip`))
+    copyFileSync(file.path,pathFn.join(CONFIG.DATA_PATH_ZIP,`${pid}.zip`))
+    unlinkSync(file.path) //删除上传的文件
   }
 
   //3.创建/更新题目
-  await db.model['problem'].updateOne({pid},value,{upsert:true})
+  //debug(pid)
+  //debug(value)
+  let doc = await db.model['problem'].findOneAndUpdate({pid},value,{upsert:true})
+  //console.log(doc)
+
 
   ctx.body = {
     status:0,
