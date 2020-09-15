@@ -48,4 +48,11 @@ _Schema.virtual("hard").get( function(){
   return LEVEL_2_HARD[this.level-1]
 })
 
+//通过率
+_Schema.virtual("passedRate").get( function(){
+  if(!this.passed || !this.posted) return "0.00%"
+  return (this.passed*100/ this.posted).toFixed(2)+ '%'
+})
+
+
 module.exports = _Schema

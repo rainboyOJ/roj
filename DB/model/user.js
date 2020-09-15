@@ -53,7 +53,7 @@ var _Schema  = new Schema({
 _Schema.virtual("postRate").get(function(){
     if( !this.postedCount || !this.passedCount)
         return '0.00%'
-    return (this.passedCount / this.postedCount).toFixed(4)*100+ '%'
+    return (this.passedCount*100 / this.postedCount).toFixed(2)+ '%'
 })
 
 _Schema.pre('save', function(next){
