@@ -63,6 +63,25 @@ module.exports = async function problem_create(ctx,next){
     }
     return
   }
+  //1.1 题目的存在性
+  let prob = await db.model['problem'].findOne({pid:value.pid})
+  if(! ctx.request.body.update_problem ){
+    if( prob ){
+      ctx.body = {
+        status:-1,
+        message:`Pid: ${value.pid} 的题目已经存在！`
+      }
+      return 
+    }
+  }
+  else if( !prob ){ //更新题目，但题目不存在
+      ctx.body = {
+        status:-1,
+        message:`Pid: ${value.pid} 的题目不存在！`
+      }
+      return 
+  }
+
   //2.处理数据文件
   if(ctx.request.files && ctx.request.files.file){ //上传了文件
     let file = ctx.request.files.file
@@ -101,11 +120,13 @@ module.exports = async function problem_create(ctx,next){
   }
 
   //3.创建/更新题目
-  //debug(pid)
-  //debug(value)
-  let doc = await db.model['problem'].findOneAndUpdate({pid},value,{upsert:true})
-  //console.log(doc)
-
+  if(ctx.request.body.update_problem){ //更新题目
+    let doc = await db.model['problem'].findOneAndUpdate({pid},value)
+  }
+  else //不是更新题目，默认创建题目
+  {
+    let doc = await db.model['problem'].create(value)
+  }
 
   ctx.body = {
     status:0,
