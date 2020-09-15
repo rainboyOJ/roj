@@ -5,6 +5,8 @@ const pathFn = require("path")
 
 const {data_list,fileList} = require("../../utils")
 const {debug} = require("console")
+const Cache = require("../../lib/Cache")
+const _ = require("lodash")
 
 module.exports = async function test_data_list(ctx,next){
   //检查数据是否存在
@@ -17,8 +19,6 @@ module.exports = async function test_data_list(ctx,next){
     ctx.body = "数据目录不存在，请检查！"
     return;
   }
-  let flist = await fileList(data_path)
-  let dlist = data_list(flist)
 
   //得到每个文件的大小
   function file_size_format(size){
@@ -27,16 +27,31 @@ module.exports = async function test_data_list(ctx,next){
     if( size < (1<<30) ) return `${(size/(1<<20)).toFixed(2)} MB`; // Mb
     return `${(size/(1<<30)).toFixed(2)} GB`
   }
-  let flist_with_size = await Promise.all( 
-    flist.map( file => fs.promises.stat(pathFn.join(data_path,file)).then( d => [file,file_size_format(d.size)]))
-  )
+
+  //得到数据列表全部的信息
+  let List = await Cache.get(`data_list_${ctx.params.pid}_info`,()=>{
+      return fileList(data_path)
+              .then( (flist) => {
+                return Promise.all(
+                  flist.map( file => fs.promises.stat(pathFn.join(data_path,file)).then( d => [file,file_size_format(d.size)]))
+                )
+              })
+              .then( (flist_with_size)=>{
+                return {
+                  flist_with_size,
+                  data_list: data_list(_.unzip(flist_with_size)[0]).both_list
+                }
+              })
+  },20)
+
+  //let dlist = data_list(flist)
+
 
   ctx.renderData = {
     ...ctx.renderData,
     pid:ctx.params.pid,
-    flist_with_size,
-    data_list: dlist.both_list
+    ...List
   }
-  debug(ctx.renderData)
+  //debug(ctx.renderData)
   await next()
 }
