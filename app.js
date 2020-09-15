@@ -45,10 +45,18 @@ app.use( mount('/markdown', require('koa-static')(pathFn.join(__project,'markdow
 app.use(views(pathFn.resolve(CONFIG.FRONT_END.views), {
     extension: 'pug',
     options:{
+        /*
+         *filters:{
+         *    'email2avatar': function(email){
+         *        return CONFIG.AVATAR_CDN.replace('{md5}',md5(email))
+         *    }
+         *},
+         */
         'email2avatar': function(email){
             return CONFIG.AVATAR_CDN.replace('{md5}',md5(email))
         }
-    }
+    },
+    cache:true
 }))
 
 // logger
