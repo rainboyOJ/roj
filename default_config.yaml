@@ -7,8 +7,8 @@ SITE:
         avatar: '/images/admin/avatar.png'
 # front end path
 FRONT_END: 
-    public: '../front-end/assets'  # 静态资源
-    views: '../front-end/template/views' # pug 视图
+    public: '../frontEnd/assets'  # 静态资源
+    views: '../frontEnd/template/views' # pug 视图
 
 # 头像cdn
 AVATAR_CDN: "https://cdn.v2ex.com/gravatar/{md5}?s=500&d=mm"
