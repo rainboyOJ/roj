@@ -25,6 +25,7 @@ module.exports = async function subList(ctx,next){
   let count = await Cache.get(`subList-totalsize`,()=>{
     return db.model['sub'].find({is_del:false}).countDocuments()
   })
+  debug(docs)
 
   ctx.renderData = {
     ...ctx.renderData,

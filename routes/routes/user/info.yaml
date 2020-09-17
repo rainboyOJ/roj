@@ -14,6 +14,9 @@
   namespace: 'user'
   name: 'info'
 - 
+  namespace: 'sub'
+  name: 'last7DaySub'
+- 
   argument: userInfo
   name: Render
   namespace: utils
