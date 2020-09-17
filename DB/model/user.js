@@ -13,8 +13,8 @@ var _Schema  = new Schema({
 
     avatar:String,
 
-    posted:{type:Array,default:[],ref:'problem'}, //提交的题目id
-    passed:{type:Array,default:[],ref:"problem"},  //通过的题目
+    posted:[{ type: Schema.Types.ObjectId, ref: 'problem' }],
+    passed:[{ type: Schema.Types.ObjectId, ref: 'problem' }],
     
     postedCount:{type:Number,default:0},    //提交的次数
     passedCount:{type:Number,default:0},    //通过的次数
@@ -64,7 +64,8 @@ _Schema.pre('save', function(next){
 
 _Schema.index({username: 1});
 _Schema.index({email: 1});
-_Schema.index({point: -1});
+_Schema.index({rank: -1});
+_Schema.index({is_del: 1});
 
 //_Schema.set('toJSON', { getters: true, virtuals: true});
 _Schema.set('toObject', { virtuals: true } )

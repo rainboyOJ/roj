@@ -11,6 +11,15 @@
   name: 'title'
   argument: ''
 - 
+  namespace: 'user'
+  name: 'info'
+- 
+  namespace: 'rank'
+  name: 'rankTop5'
+- 
+  namespace: 'sub'
+  name: 'last7DaySub'
+- 
   argument: index
   name: Render
   namespace: utils
