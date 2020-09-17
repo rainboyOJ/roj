@@ -18,7 +18,9 @@ module.exports = async function rankTop5(ctx,next){
     return db.model['user'].findOne({_id:uid}).then( doc => doc.toJSON({virtuals:true}))
   })
 
-  let gt_user_count = await db.model['problem'].find({is_del:false,rank:{ $gt:user.rank}}).countDocuments()
+  let gt_user_count = await Cache.get(`gt-rank-${user.rank}`,()=>{
+    return db.model['problem'].find({is_del:false,rank:{ $gt:user.rank}}).countDocuments()
+  })
 
   ctx.renderData = {
     ...ctx.renderData,
