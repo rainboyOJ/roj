@@ -6,7 +6,6 @@
 
 const app = require('../app');
 const http = require('http');
-const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 
 
@@ -94,24 +93,4 @@ function www(){
   }
 }
 
-//
-if( process.env.DEBUG === 'debug')
-  www()
-else{
-  if (cluster.isMaster) {
-    console.log(`主进程 ${process.pid} 正在运行`);
-
-    // 衍生工作进程。
-    for (let i = 0; i < numCPUs; i++) {
-      cluster.fork();
-    }
-
-    cluster.on('exit', (worker, code, signal) => {
-      console.log(`工作进程 ${worker.process.pid} 已退出`);
-    });
-  } else {
-    // 工作进程可以共享任何 TCP 连接。
-    www() //启动服务器
-    console.log(`工作进程 ${process.pid} 已启动`);
-  }
-}
+www()
