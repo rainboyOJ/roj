@@ -15,7 +15,7 @@ AVATAR_CDN: "https://cdn.v2ex.com/gravatar/{md5}?s=500&d=mm"
 
 
 # 数据存放的目录,上传的数据会解压到这里
-DATA_PATH: "/home/rainboy/judge/data"
+DATA_PATH: "/home/rainboy/data"
 # 数据打包目录
 DATA_PATH_ZIP: "/home/rainboy/data_zip"
 
