@@ -39,6 +39,13 @@
     title: '用户信息'
     path: '/routes/user/info.yaml'
     #==== 用户信息 ====
+
+- 
+    url: "/userinfo/change"
+    title: '修改用户信息'
+    method: 'POST'
+    path: '/routes/user/change_info.yaml'
+    #==== 修改用户信息 ====
     
 # ============ Probelm ============
 - 

@@ -27,6 +27,7 @@ var _Schema  = new Schema({
     follower_count: { type: Number, default: 0 },       // 追随的数量
     following_count: { type: Number, default: 0 },      // 追随别人的数量
     collect_topic_count: { type: Number, default: 0 },  // 收藏的topic数量
+    showEmail:{type:Boolean,default:false},             // 是否公开显示email,默认不显示
 
     rank:{type:Number,default :0},                       // 积分，做题目，比赛，发布题目解析，等得到理解
 

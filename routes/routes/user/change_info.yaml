@@ -1,0 +1,7 @@
+#修改user info
+- 
+  namespace: 'user'
+  name: 'redirect_not_logined' # 如果没有登录就redirect 到/
+- 
+  namespace: 'user'
+  name: 'change_info'
