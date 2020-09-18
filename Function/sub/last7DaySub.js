@@ -11,7 +11,7 @@ module.exports = async function last7DaySub(ctx,next){
   let doc = await Cache.get(`last7DaySub-${uid}`,()=>{
     return db.model['sub'].aggregate([
       {
-        $match:{uid:ObjectId(ctx.session._id),create_at: { $gte:time}}
+        $match:{uid:ObjectId(uid),create_at: { $gte:time}}
       },
       {
         $group:{
@@ -34,6 +34,7 @@ module.exports = async function last7DaySub(ctx,next){
       }
     ]).then ( doc => doc.reverse())
   })
+  debug(doc)
 
   ctx.renderData = {
     ...ctx.renderData,
