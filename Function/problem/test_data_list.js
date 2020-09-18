@@ -9,8 +9,9 @@ const Cache = require("../../lib/Cache")
 const _ = require("lodash")
 
 module.exports = async function test_data_list(ctx,next){
+  let PID = ctx.params.pid || ctx.PID
   //检查数据是否存在
-  let data_path = pathFn.join(CONFIG.DATA_PATH,ctx.params.pid)
+  let data_path = pathFn.join(CONFIG.DATA_PATH,PID+"")
 
   try {
     await fs.promises.access(data_path)
@@ -29,7 +30,7 @@ module.exports = async function test_data_list(ctx,next){
   }
 
   //得到数据列表全部的信息
-  let List = await Cache.get(`data_list_${ctx.params.pid}_info`,()=>{
+  let List = await Cache.get(`data_list_${PID}_info`,()=>{
       return fileList(data_path)
               .then( (flist) => {
                 return Promise.all(
@@ -49,7 +50,7 @@ module.exports = async function test_data_list(ctx,next){
 
   ctx.renderData = {
     ...ctx.renderData,
-    pid:ctx.params.pid,
+    pid:PID,
     ...List
   }
   //debug(ctx.renderData)

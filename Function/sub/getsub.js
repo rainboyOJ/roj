@@ -31,12 +31,13 @@ module.exports = async function getsub(ctx,next){
     return
   }
 
+  ctx.PID = doc.pid.pid // 为了使用 problem.test_data_list
+
   ctx.renderData = {
     ...ctx.renderData,
     sub: doc
   }
-  debug(ctx.renderData)
-  debug(ctx.renderData.sub.result)
+  //debug(ctx.renderData)
 
   await next()
 }
