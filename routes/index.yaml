@@ -151,6 +151,11 @@
     method: 'POST'
     title: '创建题目'
     path: '/routes/admin/problem_create_post.yaml'
+- 
+    url: "/admin/problem/update"
+    method: 'POST'
+    title: '更新题目'
+    path: '/routes/admin/problem_update_post.yaml'
 
     # ============= 404 =============
 - 

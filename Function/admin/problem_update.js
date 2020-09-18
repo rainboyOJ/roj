@@ -1,14 +1,8 @@
-/* 
- * 创建 邀请码
- * */
-const moment = require("moment") 
+//题目更新
+const Joi = require('joi')
 const {unlinkSync,mkdirSync,existsSync,rmdirSync,renameSync,copyFileSync} = require("fs")
 const pathFn = require("path")
 const {execSync} = require("child_process")
-const {join} = require('path')
-const Joi = require('joi')
-const {debug} = require("console")
-
 
 const schema = Joi.object({
     pid: Joi.number()
@@ -20,40 +14,38 @@ const schema = Joi.object({
         .integer()
         .min(100)      //最小 100ms
         .max(50000)    //最大 50s
-        .default(1000) //默认 1s
+        .optional()    //可选的
     ,memory: Joi.number()
         .integer()
         .min(16)      //最小16mb
         .max(4*1024)  //最大4GB
-        .default(128) //默认128mb
+        .optional() 
     ,stack: Joi.number()
         .integer()
         .min(15)      //最小16mb
         .max(4*1024)  //最大4GB
-        .default(128) //默认128mb
+        .optional() //默认128mb
     ,level: Joi.number()
         .integer()
         .min(1)      //最小16mb
         .max(10)  //最大4GB
-        .default(1) //默认128mb
+        .optional() //默认128mb
     ,title:Joi.string()
         .min(1)     
         .max(100)  
-        .required() 
+        .optional() 
     ,content:Joi.string()
-        .required() 
+        .optional()
     ,spj: Joi.string()
         .valid(...['INNER','default','spj.cpp','spj.js','spj.py', "acmp","caseicmp","casewcmp","fcmp", "hcmp","lcmp","rcmp", "rcmp6","rncmp","wcmp", "bcmp","casencmp","dcmp","fcmp2","icmp","ncmp","rcmp4","rcmp9","uncmp","yesno" ])
+        .optional()
     ,is_del:Joi.boolean()
-        .default(false)
-        //.valid(...['INNER','default','spj.cpp','spj.js','spj.py', "acmp","caseicmp","casewcmp","fcmp", "hcmp","lcmp","rcmp", "rcmp6","rncmp","wcmp", "bcmp","casencmp","dcmp",,,"fcmp2","icmp","ncmp","rcmp4","rcmp9","uncmp","yesno" ])
+        .optional()
     ,source:Joi.string().allow('').optional()
 })
 
-
-module.exports = async function problem_create(ctx,next){
+module.exports = async function problem_update(ctx,next){
   //1.查检参数
-  debug(ctx.request.body)
   let {pid,time,memory,stack,spj,level,title,content,source} = ctx.request.body
   const { error, value } = schema.validate({pid,time,memory,stack,spj,level,title,content,source});
   if( error){
@@ -63,12 +55,14 @@ module.exports = async function problem_create(ctx,next){
     }
     return
   }
+
   //1.1 题目的存在性
   let prob = await db.model['problem'].findOne({pid:value.pid})
-  if( prob ){
+
+  if( !prob ){
     ctx.body = {
       status:-1,
-      message:`Pid: ${value.pid} 的题目已经存在！`
+      message:`Pid: ${value.pid} 的题目不存在！`
     }
     return 
   }
@@ -76,7 +70,7 @@ module.exports = async function problem_create(ctx,next){
   //2.处理数据文件
   if(ctx.request.files && ctx.request.files.file){ //上传了文件
     let file = ctx.request.files.file
-    let data_path = join(CONFIG.DATA_PATH,pid+'')
+    let data_path = pathFn.join(CONFIG.DATA_PATH,pid+'')
     let data_path_exists = existsSync(data_path)
     //debug(file.path)
     if( data_path_exists ){  //数据目录存在
@@ -110,11 +104,11 @@ module.exports = async function problem_create(ctx,next){
     unlinkSync(file.path) //删除上传的文件
   }
 
-  let doc = await db.model['problem'].create(value)
-
+  //3.创建/更新题目
+  let doc = await db.model['problem'].findOneAndUpdate({pid},value)
   ctx.body = {
     status:0,
-    message:`创建题目:${pid} 成功!`
+    message:`更新题目:${pid} 成功!`
   }
 
 }

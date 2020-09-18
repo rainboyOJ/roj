@@ -1,0 +1,8 @@
+- "admin.redirect_not_logined"
+- 
+  namespace: 'utils'
+  name: 'renderData'
+  argument: {}
+- 
+  namespace: 'admin'  # 发送到 inviteCode_create 这个路径
+  name: 'problem_update'
