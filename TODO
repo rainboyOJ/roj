@@ -21,7 +21,7 @@
       - https://www.cnblogs.com/wufengtinghai/p/6193152.html
       - https://stackoverflow.com/questions/42964649/mongoose-full-test-search-does-not-work
       - https://docs.mongodb.com/manual/text-search/index.html
-- [ ] isJudgeEnd 加上一个Redis来限定3s访问一次
+- [x] isJudgeEnd 加上一个Redis来限定3s访问一次
 - [x] admin 批量上传题目的脚本
 - [x] frond-end 使用的cdn可以通过配置,转成纯本地,也可以cdn
 - [x] upload_data_force 与update_problem_force 要有区别
