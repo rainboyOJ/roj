@@ -1,9 +1,30 @@
-- [ ] admin 批量上传题目的脚本
 - [ ] admin 更新题目,就用problem_create.pug,不过要处理可以更新题面,不更新数据的情况,这里使用询问框:是否不上传数据
 - [ ] 完善sublist的查询
 - [ ] 注意button全部用sub页面的 [复制] 的样式替换了
-- [ ] frond-end 使用的cdn可以通过配置,转成纯本地,也可以cdn
-- [ ] upload_data_force 与update_problem_force 要有区别
+- [ ] minibbs的实现
+    - 留言功能 https://github.com/th720309/node_bbs
+    - 像loj一样只有1层留言 ?
+    - 像node_club 一样来设计,分类
+- [ ] 实现标签功能
+    - [ ] 基础 ? 如何在mongodb中快速的利用标签来搜索,聚合?
+        - https://developer.aliyun.com/article/6146
+    - [ ] 上传标签,原来的标签
+    - [ ] 题目列表的标签显示
+    - [ ] 标签云-可以分类的标签
+        - 样式-> https://www.wowhead.com/frost-death-knight-guide
+        - > https://codepen.io/ey_intuitive/pen/bEQpqP
+- [ ] 实现题目搜索功能
+    - [ ] 按标题搜索
+    - [ ] jieba分词 配合 mongodb
+      - https://github.com/yanyiwu/nodejieba
+      - https://mlln.cn/2019/06/21/mongodb%E8%A7%A3%E5%86%B3textsearch%E6%90%9C%E7%B4%A2%E4%B8%AD%E6%96%87%E7%9A%84%E9%97%AE%E9%A2%98/
+      - https://www.cnblogs.com/wufengtinghai/p/6193152.html
+      - https://stackoverflow.com/questions/42964649/mongoose-full-test-search-does-not-work
+      - https://docs.mongodb.com/manual/text-search/index.html
+- [ ] isJudgeEnd 加上一个Redis来限定3s访问一次
+- [x] admin 批量上传题目的脚本
+- [x] frond-end 使用的cdn可以通过配置,转成纯本地,也可以cdn
+- [x] upload_data_force 与update_problem_force 要有区别
 - [x] redis缓存,对problem_list,sublist,problem, submission(非juding状态缓存)
 - [x] 数据下载
 - [x] problem info populate "bestSub.uid" select "username realname email"
