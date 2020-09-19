@@ -63,9 +63,9 @@ _Schema.pre('save', function(next){
   next();
 });
 
+_Schema.index({rank: -1});
 _Schema.index({username: 1});
 _Schema.index({email: 1});
-_Schema.index({rank: -1});
 _Schema.index({is_del: 1});
 
 //_Schema.set('toJSON', { getters: true, virtuals: true});

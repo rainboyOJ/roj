@@ -3,6 +3,8 @@ const Joi = require('joi')
 const {unlinkSync,mkdirSync,existsSync,rmdirSync,renameSync,copyFileSync} = require("fs")
 const pathFn = require("path")
 const {execSync} = require("child_process")
+const {createDbTextSearch} = require("../../utils")
+
 
 const schema = Joi.object({
     pid: Joi.number()
@@ -105,7 +107,11 @@ module.exports = async function problem_update(ctx,next){
   }
 
   //3.创建/更新题目
-  let doc = await db.model['problem'].findOneAndUpdate({pid},value)
+  let extra_update = {}
+  if( value.title ){ //如果有title 存在
+    extra_update.search = [value.pid+"",...createDbTextSearch(value.title)].join(" ")
+  }
+  let doc = await db.model['problem'].findOneAndUpdate({pid},{...value,...extra_update})
   ctx.body = {
     status:0,
     message:`更新题目:${pid} 成功!`

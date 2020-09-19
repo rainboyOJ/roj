@@ -14,13 +14,23 @@
         - 样式-> https://www.wowhead.com/frost-death-knight-guide
         - > https://codepen.io/ey_intuitive/pen/bEQpqP
 - [ ] 实现题目搜索功能
-    - [ ] 按标题搜索
-    - [ ] jieba分词 配合 mongodb
+    - [x] 下载nodejieba,分词的方法如下
+        ```
+        let only_en = title.replace(/[^a-zA-Z]/g," ").split(" ").filter(d => d.length)
+        let only_num = title.replace(/[^0-9]/g," ").split(" ").filter(d => d.length)
+        let only_chn = jb.cut( title.replace(/[^\u4e00-\u9fa5]/g,""))
+        cut: [pid,...only_chn,...only_en,...only_num].join("<->")
+        ```
+    - [x] https://docs.mongodb.com/manual/text-search/
+    - [x] 按标题搜索
+    - [x] jieba分词 配合 mongodb
       - https://github.com/yanyiwu/nodejieba
       - https://mlln.cn/2019/06/21/mongodb%E8%A7%A3%E5%86%B3textsearch%E6%90%9C%E7%B4%A2%E4%B8%AD%E6%96%87%E7%9A%84%E9%97%AE%E9%A2%98/
       - https://www.cnblogs.com/wufengtinghai/p/6193152.html
       - https://stackoverflow.com/questions/42964649/mongoose-full-test-search-does-not-work
       - https://docs.mongodb.com/manual/text-search/index.html
+    - [x] 要注意有没有index text 建立
+    - [ ] 完成route.yaml http api
 - [x] isJudgeEnd 加上一个Redis来限定3s访问一次
 - [x] admin 批量上传题目的脚本
 - [x] frond-end 使用的cdn可以通过配置,转成纯本地,也可以cdn

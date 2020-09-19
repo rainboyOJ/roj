@@ -4,12 +4,14 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const BaseModel = require("./_base.js")
+const {createDbTextSearch} = require("../../utils")
 
 const _Schema = new Schema({
 
     pid:{type:Number,unique:true},
     title:String,
     content:String,
+    search:{type:String,default:""},      // 查找用
     time:{type:Number,default:1000},//限制的时间,ms
     memory:{type:Number,default:128*1024*1024},//限制的内存
     stack:{type:Number,default:128*1024*1024},//栈限制的内存
@@ -38,9 +40,10 @@ const _Schema = new Schema({
 });
 
 
-_Schema.plugin(BaseModel)
-_Schema.index({pid:1})
+_Schema.index({search:"text"})
 _Schema.index({is_del:1})
+_Schema.index({pid:1})
+_Schema.plugin(BaseModel)
 
 //难度
 const LEVEL_2_HARD = [ "入门", "普级-", "普级", "提高-", "提高", "省选-", "省选", "NOI-", "NOI", "地狱"]
@@ -52,6 +55,11 @@ _Schema.virtual("hard").get( function(){
 _Schema.virtual("passedRate").get( function(){
   if(!this.passed || !this.posted) return "0.00%"
   return (this.passed*100/ this.posted).toFixed(2)+ '%'
+})
+
+_Schema.pre('save',function(next){
+  this.search = [this.pid+"", ...createDbTextSearch(this.title)].join(" ")
+  next()
 })
 
 

@@ -2,6 +2,7 @@ const utils = require('../utils')
 const mongoose = require("mongoose")
 const pathFn = require('path')
 const {table, debug} = require('console')
+mongoose.set('debug', process.env.DEBUG === 'debug');
 
 //https://mongoosejs.com/docs/deprecations.html#-findandmodify-
 mongoose.set('useFindAndModify', false);

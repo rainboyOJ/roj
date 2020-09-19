@@ -43,15 +43,16 @@ var submissionSchema = new Schema({
     total_time:{type:Number,default:0}, // 总时间, ms
 
     score:{type:[Number,Number],default:[0,0]}, // 通过, 全部点的数量
-    is_del:{type:Boolean,default:false} //是否删除,可用于比赛的提交
 
 });
 
+submissionSchema.index({pid:1})
+submissionSchema.index({uid:1})
+submissionSchema.index({uid:1,pid:1})
 submissionSchema.plugin(BaseModel)
 
 //submissionSchema.index({create_at:-1})
 //submissionSchema.index({ref:1})
-//submissionSchema.index({type:1})
 
 //submissionSchema.virtual("status").get( function(){
     //if( this.step == 0) {
