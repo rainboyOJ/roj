@@ -22,10 +22,17 @@
     title: '注册'
     path: '/routes/user/register_post.yaml'
 # ============ 登录/注册 END ============
+
+
+# ============ Uitls ============
 - 
     url: '/captcha'
     title: '验证码'
     path: '/routes/utils/captcha.yaml'
+- 
+    url: '/help'
+    title: '帮助'
+    path: '/routes/utils/help.yaml'
 
 # ============ User ============
 - 
