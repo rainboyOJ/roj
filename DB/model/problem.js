@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const BaseModel = require("./_base.js")
-const {createDbTextSearch} = require("../../utils")
+//const {createDbTextSearch} = require("../../utils")
 
 const _Schema = new Schema({
 
@@ -40,7 +40,6 @@ const _Schema = new Schema({
 });
 
 
-_Schema.index({search:"text"})
 _Schema.index({is_del:1})
 _Schema.index({pid:1})
 _Schema.plugin(BaseModel)
@@ -58,7 +57,7 @@ _Schema.virtual("passedRate").get( function(){
 })
 
 _Schema.pre('save',function(next){
-  this.search = [this.pid+"", ...createDbTextSearch(this.title)].join(" ")
+  //this.search = [this.pid+"", ...createDbTextSearch(this.title)].join(" ")
   next()
 })
 

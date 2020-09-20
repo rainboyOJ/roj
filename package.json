@@ -32,7 +32,6 @@
     "md5": "^2.2.1",
     "moment": "^2.27.0",
     "mongoose": "^5.6.9",
-    "nodejieba": "^2.4.1",
     "pug": "^2.0.3",
     "socket.io-client": "^2.3.0",
     "svg-captcha": "^1.4.0",

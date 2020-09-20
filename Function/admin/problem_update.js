@@ -107,11 +107,10 @@ module.exports = async function problem_update(ctx,next){
   }
 
   //3.创建/更新题目
-  let extra_update = {}
-  if( value.title ){ //如果有title 存在
-    extra_update.search = [value.pid+"",...createDbTextSearch(value.title)].join(" ")
-  }
-  let doc = await db.model['problem'].findOneAndUpdate({pid},{...value,...extra_update})
+  //if( value.title ){ //如果有title 存在
+    //extra_update.search = [value.pid+"",...createDbTextSearch(value.title)].join(" ")
+  //}
+  let doc = await db.model['problem'].findOneAndUpdate({pid},value)
   ctx.body = {
     status:0,
     message:`更新题目:${pid} 成功!`
