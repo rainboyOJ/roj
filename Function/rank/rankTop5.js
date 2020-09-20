@@ -19,7 +19,7 @@ module.exports = async function rankTop5(ctx,next){
   })
 
   let gt_user_count = await Cache.get(`gt-rank-${user.rank}`,()=>{
-    return db.model['problem'].find({is_del:false,rank:{ $gt:user.rank}}).countDocuments()
+    return db.model['user'].find({is_del:false,rank:{ $gt:user.rank}}).countDocuments()
   })
 
   ctx.renderData = {
