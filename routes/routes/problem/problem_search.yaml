@@ -1,0 +1,7 @@
+- 
+  namespace: 'user'
+  name: 'redirect_not_logined_for_post' # 如果没有登录就redirect 到/
+#- 频率限制
+- 
+  namespace: 'problem'
+  name: 'search' # 如果没有登录就redirect 到/

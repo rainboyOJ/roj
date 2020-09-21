@@ -4,14 +4,13 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const BaseModel = require("./_base.js")
-//const {createDbTextSearch} = require("../../utils")
+const Problem_search = require("../../lib/Problem_search")
 
 const _Schema = new Schema({
 
     pid:{type:Number,unique:true},
     title:String,
     content:String,
-    search:{type:String,default:""},      // 查找用
     time:{type:Number,default:1000},//限制的时间,ms
     memory:{type:Number,default:128*1024*1024},//限制的内存
     stack:{type:Number,default:128*1024*1024},//栈限制的内存
@@ -57,7 +56,7 @@ _Schema.virtual("passedRate").get( function(){
 })
 
 _Schema.pre('save',function(next){
-  //this.search = [this.pid+"", ...createDbTextSearch(this.title)].join(" ")
+  Problem_search.Debouce_init() //建立search的文档
   next()
 })
 

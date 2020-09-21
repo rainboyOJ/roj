@@ -82,6 +82,12 @@
     title: '数据下载'
     path: '/routes/problem/download.yaml'
     #==== 数据下载 ====
+- 
+    url: "/problem_search"
+    method: 'POST'
+    title: '题目搜索'
+    path: '/routes/problem/problem_search.yaml'
+    #==== 题目显示 ====
 
 # ============ Sub ============
 - 

@@ -2,6 +2,8 @@
  * ●﹏● 进行初始化的工作
  * */
 
+const Problem_search = require("../lib/Problem_search")
+
 global.debug = require('debug')('debug')
 
 
@@ -54,4 +56,5 @@ require("./create_a+b_problem.js")()
 
 
 module.exports = async function INIT(koaApp){
+  Problem_search.Debouce_init()
 }

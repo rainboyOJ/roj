@@ -1,0 +1,920 @@
+-
+ _id: 0/1背包
+ content: "背包最基本的一类，练手用~~"
+
+
+-
+ _id: 2-SAT
+ content: "利用对称性求解2-SAT问题"
+
+
+-
+ _id: ACM/ICPC
+ content: "ACM国际大学生程序设计竞赛（英文全称：ACM International Collegiate Programming Contest（简称ACM-ICPC或ICPC））是由国际计算机协会（ACM）主办的"
+
+
+-
+ _id: APIO
+ content: "亚洲-太平洋 OI"
+
+
+-
+ _id: DAG
+ content: "有向无环图"
+
+
+-
+ _id: DFS序
+ content: ""
+
+
+-
+ _id: dinic
+ content: "网络流"
+
+
+-
+ _id: FFT
+ content: "快速傅立叶变换"
+
+
+
+-
+ _id: Hopcroft-karps算法
+ content: ""
+
+
+-
+ _id: IOI
+ content: "国际信息学奥林匹克竞赛"
+
+-
+ _id: K-D树
+ content: "一种分割k维数据空间的数据结构"
+
+
+-
+ _id: kmp
+ content: "字符串匹配算法"
+
+
+-
+ _id: k短路
+ content: "用a*算法，求解第k短的路径"
+
+
+-
+ _id: LCA
+ content: "最近公共祖先"
+
+
+
+-
+ _id: NOI
+ content: "全国信息学奥林匹克竞赛"
+
+-
+ _id: NOIP
+ content: "全国青少年信息学奥林匹克联赛 全国青少年信息学奥林匹克联赛"
+
+-
+ _id: NOI题库
+ content: "http://noi.openjudge.cn/"
+
+
+-
+ _id: NP问题
+ content: "非确定性多项式时间复杂度问题"
+
+-
+ _id: POJ
+ content: "Pku Online Judge (ACM),北大的OJ"
+
+-
+ _id: RMQ
+ content: "ST算法  Range Minimum/Maximum Query，可以用线段树或者ST算法解决。"
+
+
+-
+ _id: st表
+ content: "预处理查表算法"
+
+
+-
+ _id: SG函数
+ content: "博弈论的工具"
+
+
+-
+ _id: STL
+ content: "C++ STL 标准模板库 照着模板打一个就能A~(≧▽≦)/~啦啦啦"
+
+
+-
+ _id: USACO
+ content: "USA Computing Olympiad 美国计算机竞赛"
+
+
+-
+ _id: UVa
+ content: "UVa,<算法竞赛入门> 入门"
+
+-
+ _id: 一维数组
+ content: ""
+
+-
+ _id: 三分
+ content: ""
+
+-
+ _id: 三维凸包
+ content: ""
+
+
+-
+ _id: 临界
+ content: ""
+
+
+-
+ _id: 主席树
+ content: "函数式线段树 系统函数及数学库函数的熟练使用"
+
+
+-
+ _id: 二分图
+ content: "二分图 二分再二分 二分 二分正解"
+
+
+-
+ _id: 二分法
+ content: "二分参数"
+
+
+-
+ _id: 二维树状数组
+ content: "这题是二维的"
+
+
+-
+ _id: 二维线段树
+ content: ""
+
+
+-
+ _id: 仙人掌图
+ content: "任意一条边都属于且仅属于一个环的有向强连通图，和任意一条边都至多属于一个环的无向连通图被称为仙人掌图"
+
+
+-
+ _id: 位运算
+ content: "位运算"
+
+-
+ _id: 倍增
+ content: "倍增算法 倍增 恩 很经典的倍增思想"
+
+
+-
+ _id: 决策单调性优化
+ content: "动态规划的一种优化方法。"
+
+
+-
+ _id: 分块
+ content: "分块之后，随便搞。"
+
+
+-
+ _id: 分层图
+ content: "把原图复制分层来解决一些不同寻常的最短路问题。详见集训队2004《肖天——分层图思想及其在信息学竞赛中的应用》"
+
+
+-
+ _id: 分治
+ content: "二分查找 二分 分治 二分答案 二分合理答案 二分答案之后贪心"
+
+
+-
+ _id: 划分树
+ content: "可在O(logn)的时间复杂度内求出区间第k大值的一种数据结构 采用定义数据结构的方法来完成题目。 利用自己定义的数据结构来储存数据"
+
+
+-
+ _id: 前缀和
+ content: ""
+
+
+-
+ _id: 前缀和优化
+ content: ""
+
+
+-
+ _id: 剪枝
+ content: "不剪你就wa到黑吧"
+
+
+-
+ _id: 动态图
+ content: ""
+
+
+-
+ _id: 动态开点
+ content: ""
+
+
+-
+ _id: 动态树
+ content: "包含对树的分割与合并，对每个点到根路径和子树操作/查询的一类问题"
+
+
+-
+ _id: 动态规划
+ content: "通过把原问题分解为相对简单的子问题的方式求解复杂问题，适用于有重叠子问题和最优子结构性质的问题 01背包"
+
+
+-
+ _id: 匈牙利算法
+ content: ""
+
+
+-
+ _id: 区域动规
+ content: ""
+
+
+-
+ _id: 半平面交
+ content: "求若干个半平面的交集。常用分治法或朱泽园提出的排序增量法（二者复杂度均为O(NlogN)）解决。"
+
+
+-
+ _id: 单纯形
+ content: ""
+
+
+-
+ _id: 单调数列
+ content: ""
+
+
+-
+ _id: 单调栈
+ content: ""
+
+
+-
+ _id: 单调队列
+ content: "通过维护一个内部元素保持单调性的队列用均摊O(1)的时间复杂度求出满足一定条件的区间最值 需要单调队列维护优化"
+
+
+-
+ _id: 博弈论
+ content: "研究公式化了的激励结构（游戏或者博弈）间的相互作用"
+
+
+-
+ _id: 卡精度
+ content: ""
+
+
+-
+ _id: 压位
+ content: ""
+
+
+-
+ _id: 双向动归
+ content: ""
+
+
+-
+ _id: 双连通分量
+ content: "利用dfs求双连通分量"
+
+
+-
+ _id: 可持久化
+ content: "可持久化数据结构"
+
+
+-
+ _id: 合并类动态规划
+ content: ""
+
+
+-
+ _id: 后缀数组
+ content: ""
+
+
+-
+ _id: 后缀树
+ content: ""
+
+
+-
+ _id: 后缀自动机
+ content: "后缀自动机"
+
+
+-
+ _id: 启发式合并
+ content: ""
+
+
+-
+ _id: 哈夫曼树
+ content: ""
+
+
+-
+ _id: 哈希表
+ content: "使用哈希表可极巧妙的绕开某些问题"
+
+
+-
+ _id: 四分树
+ content: ""
+
+
+-
+ _id: 回文串
+ content: "回文子串问题，大多可用Manacher算法，后缀数组等字符串算法解决"
+
+
+-
+ _id: 回文自动机
+ content: "自动机，处理各种回文串问题。"
+
+
+-
+ _id: 回溯
+ content: "回溯"
+
+
+-
+ _id: 图论
+ content: "图论 构图 建图 图"
+
+
+-
+ _id: 基本
+ content: "语言的基本知识及练习 简单 水题 水得不能再水的题 水水更健康~ 水的不能再水的题，水水更健康。 水啊 简单简单！！！ 水得不能再水 水题不解释"
+
+
+-
+ _id: 堆
+ content: "二叉堆 可并堆 大根堆  小根堆 堆结构 heap 优先队列  Fibonacci堆 可用优先队列ac"
+
+
+-
+ _id: 多重背包
+ content: ""
+
+
+-
+ _id: 奇技淫巧
+ content: "解题方法有脑筋急转弯性质"
+
+
+-
+ _id: 字典序
+ content: ""
+
+
+-
+ _id: 字典树
+ content: "Retrieval Tree Trie Tree"
+
+
+-
+ _id: 字符串
+ content: "字符串 string 字符串匹配 KMP算法 格式输入 通过o n+m的效率来查找模式串在目标串中出现的位置和次数"
+
+
+
+-
+ _id: 字符串hash
+ content: "通过字符串hash解字符串匹配问题"
+
+
+-
+ _id: 容斥原理
+ content: ""
+
+
+-
+ _id: 对偶图
+ content: ""
+
+
+-
+ _id: 左偏树
+ content: ""
+
+
+-
+ _id: 差分序列
+ content: "差分序列"
+
+
+-
+ _id: 差分约束
+ content: "最短路径解决差分约束系统问题"
+
+
+-
+ _id: 带花树
+ content: "一般图的最大匹配"
+
+
+-
+ _id: 平衡树
+ content: "平衡树  BST SBT Treap AVL Splay 红黑树 Van Emde Boas B树 set，multiset，map，multimap 平衡树启发式合并"
+
+
+-
+ _id: 平面图
+ content: ""
+
+
+-
+ _id: 并查集
+ content: "对不相交集合的合并和查找 UFS 查查，并"
+
+
+-
+ _id: 弦图
+ content: "在一个图中，每一个长度大于三的环都至少有一条弦，弦是连接环上两个不相邻顶点的一条边。"
+
+
+-
+ _id: 弦图和区间图
+ content: ""
+
+
+-
+ _id: 强连通分量
+ content: ""
+
+
+-
+ _id: 快速幂
+ content: ""
+
+
+-
+ _id: 悬线法
+ content: "求解各类最大子矩形问题"
+
+
+-
+ _id: 打表
+ content: "静态打表 多线程变频置换表 非稳态表 量子纠缠表"
+
+
+-
+ _id: 扩展欧几里德
+ content: ""
+
+
+-
+ _id: 扫描线法
+ content: ""
+
+
+-
+ _id: 找规律
+ content: ""
+
+
+-
+ _id: 拓扑排序
+ content: "将有向无环图中所有顶点排成一个线性序列，使得图中任意一对顶点u和v，若(u,v)间有一条边，则u在线性序列中出现在v之前。 快速排序"
+
+
+-
+ _id: 拟阵
+ content: "拟阵是一个满足交换性的子集系统"
+
+
+-
+ _id: 排列组合
+ content: "ANS=C(快速幂结果-1，k-1）"
+
+
+-
+ _id: 排序
+ content: "快速排序 冒泡排序 选择排序 桶排序 归并排序 基数排序 系统快排 用的排序算法越优，时间会越短。 程序好编，完美去重！"
+
+
+-
+ _id: 排序网络
+ content: ""
+
+
+-
+ _id: 推导
+ content: ""
+
+
+-
+ _id: 插头DP
+ content: "基于连通性状态压缩的动态规划"
+
+
+-
+ _id: 搜索
+ content: "BFS 广度优先搜索 宽度优先搜索 广搜 宽搜  DFS 深度优先搜索 深搜 记忆化搜索 搜索+剪枝"
+
+
+-
+ _id: 散列
+ content: "Hash 散列 哈希"
+
+
+-
+ _id: 数位dp
+ content: ""
+
+
+-
+ _id: 数值方法
+ content: "数值方法解函数，数值方法求极值，数值积分，Simpson公式求积分"
+
+
+-
+ _id: 数学
+ content: "数学方法 组合数学 线性代数 概率论 数学知识 质因数分解  素数 数学相关 比较水"
+
+
+-
+ _id: 数论
+ content: "整数性质 素数 同余 RSA加密算法 莫比乌斯反演 学好数学......"
+
+
+-
+ _id: 整体二分
+ content: "对所有询问二分最后得到答案"
+
+
+
+-
+ _id: 文法分析
+ content: "文法分析 编译原理 BNF"
+
+
+-
+ _id: 斜率优化
+ content: "用平面上的点表示决策，并维护决策的凸包以降低DP的时间复杂度"
+
+
+-
+ _id: 暴力
+ content: ""
+
+
+-
+ _id: 暴搜
+ content: ""
+
+
+-
+ _id: 最值子图
+ content: "最大独立集 最小支配集 最小路径覆盖 最大闭合子图"
+
+
+-
+ _id: 最小公倍数
+ content: ""
+
+
+-
+ _id: 最小割树
+ content: ""
+
+
+-
+ _id: 最小生成树
+ content: "最小生成树 MST Kruskal 克鲁斯卡尔 Prim 普利姆 Kruskal"
+
+
+-
+ _id: 最小表示法
+ content: ""
+
+
+-
+ _id: 最短路
+ content: "最短路 最短路径 Dijkstra Bellman-ford Floyd SPFA 这个用解释吗？"
+
+
+-
+ _id: 最长上升子序列
+ content: "有n^2和nlogn两种算法"
+
+
+-
+ _id: 最长不下降子序列
+ content: ""
+
+
+-
+ _id: 有限状态自动机
+ content: ""
+
+
+-
+ _id: 枚举
+ content: ""
+
+
+-
+ _id: 栈和队列
+ content: "FILO FIFO 栈 队列 堆栈 stack queue STL的灵活运用 map神奇过法不解释"
+
+
+-
+ _id: 树分治
+ content: "树的边分治和点分治"
+
+
+-
+ _id: 树套树
+ content: ""
+
+
+-
+ _id: 树形DP
+ content: ""
+
+
+-
+ _id: 树状数组
+ content: "在一个区间内实现快速查询，修改，删除的高效结构。 树状数组的离线应用"
+
+
+-
+ _id: 树
+ content: "树 树结构 Tree 二叉树"
+
+
+
+-
+ _id: 树链剖分
+ content: "将一棵树划分成若干条链使得每个点属于唯一一条链"
+
+
+-
+ _id: 概率与期望
+ content: "概率与期望"
+
+
+
+
+-
+ _id: 模式匹配
+ content: "在串中寻找子串出现的位置 KMP算法 AC自动机"
+
+
+-
+ _id: 模拟
+ content: "模拟 就是模拟 耐心吧 扫一遍即可 模拟 贪心 入门题 模拟算法 耐心就一定能过"
+
+
+-
+ _id: 模拟退火
+ content: ""
+
+
+-
+ _id: 次短路
+ content: ""
+
+
+-
+ _id: 欧拉函数
+ content: "筛法求OL函数"
+
+
+-
+ _id: 欧拉路径
+ content: "欧拉路径 欧拉回路"
+
+
+-
+ _id: 水题
+ content: ""
+
+
+-
+ _id: 浮水法
+ content: "一种解决区间染色问题的奇怪方法 其实就是线段切割"
+
+
+-
+ _id: 浮点运算
+ content: "测试计算机浮点运算能力 Super PI"
+
+
+-
+ _id: 滚动数组
+ content: "要用到滚动数组优化空间 防止爆内存的利器"
+
+
+-
+ _id: 灌水法
+ content: ""
+
+
+-
+ _id: 特判
+ content: ""
+
+
+-
+ _id: 状态压缩
+ content: "将状态用一个正整数表示"
+
+
+-
+ _id: 矩形切割
+ content: ""
+
+-
+ _id: 矩阵乘法
+ content: ""
+
+
+-
+ _id: 矩阵快速幂
+ content: ""
+
+
+-
+ _id: 矩阵树定理
+ content: "求图的生成树数量"
+
+
+-
+ _id: 矩阵运算
+ content: ""
+
+
+-
+ _id: 离散化
+ content: "离散化"
+
+
+-
+ _id: 种子填充
+ content: "Flood Fill是一种图论算法，对于一个图来说，可以很方便的求子图的个数。"
+
+
+-
+ _id: 稀疏表
+ content: "Sparse Table 稀疏表 ST ST算法"
+
+
+-
+ _id: 红黑树
+ content: "红黑树（Red Black Tree） 是一种自平衡二叉查找树，是在计算机科学中用到的一种数据结构，典型的用途是实现关联数组。"
+
+
+-
+ _id: 线性动规
+ content: ""
+
+
+-
+ _id: 线性结构
+ content: "线性表 链表 线形结构"
+
+
+-
+ _id: 线性规划
+ content: ""
+
+
+-
+ _id: 线段树
+ content: "在一个区间内实现快速查询，修改，删除的高效结构。 不解释"
+
+
+-
+ _id: 组合数学
+ content: ""
+
+
+-
+ _id: 网络流
+ content: "最大流 最小割 NetworkFlow 费用流 最小费用最大流 枚举答案，最大流验证 动态加点 枚举矩形上下界"
+
+
+-
+ _id: 网络流 0/1分数规划
+ content: ""
+
+
+-
+ _id: 群论
+ content: "置换群 E8李群"
+
+
+-
+ _id: 背包问题
+ content: "01背包 完全背包 有物品数量限制的背包问题"
+
+
+-
+ _id: 莫队
+ content: ""
+
+
+-
+ _id: 表达式树
+ content: "表达式计算与表达式树 波兰算法 波兰表达式 逆波兰表达式"
+
+
+-
+ _id: 要用%.0lf
+ content: ""
+
+
+-
+ _id: 解异或方程组
+ content: ""
+
+
+-
+ _id: 解方程组
+ content: "高斯消元"
+
+
+-
+ _id: 计数
+ content: "统计选择的方案数"
+
+
+-
+ _id: 计算几何
+ content: "计算几何 凸包 旋转卡壳"
+
+
+-
+ _id: 记忆化搜索
+ content: "转换状态"
+
+
+-
+ _id: 贪心
+ content: "从问题的某一个初始解出发逐步逼近给定的目标，以尽可能快的地求得更好的解 满足局部最优解是全局最优解的DP 可以用数学证明"
+
+
+-
+ _id: 辗转相除
+ content: ""
+
+
+-
+ _id: 近似算法
+ content: ""
+
+
+-
+ _id: 连通性
+ content: "连通块 连通度 割顶 桥 块 连通图 无向图连通分量 有向图强连通分量 弱连通分量 Tarjan 利用dfs求出强连通分量来解决问题"
+
+
+-
+ _id: 递归
+ content: ""
+
+
+-
+ _id: 递推
+ content: "递推 总结归纳出递推公式进行求值 数值递推"
+
+
+-
+ _id: 陈丹琦分治
+ content: "按时间分治的算法，又称CDQ分治"
+
+
+-
+ _id: 随机化
+ content: "利用随机数的稳定概率"
+
+
+-
+ _id: 骗分
+ content: "心态，非完美算法，精彩地骗，简单数学分析+猜测，分类讨论 直接输出答案 打结果表"
+
+
+-
+ _id: 高精度
+ content: "高精度加法 高精度减法 高精度乘法 高精度除法 需要用到高精度计算"
