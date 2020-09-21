@@ -1,3 +1,22 @@
+## 本OJ的题目列表
+
+本OJ的题目仓库托管在[Github](https://github.com/rainboyOJ/problems)上
+
+**题目分类**
+
+- 1000-1675为一本通的题目,注意题目编号不连续
+- 1671-1999为我(Rainboy)平时做的题目的添加
+- 2000-2096为usaco training的题目
+- 3000-4000历年noip题目
+
+**题目列表**
+
+ - [一本通入门篇题目列表](https://github.com/rainboyOJ/problems/blob/master/list/一本通入门篇题目列表.md) PS. 数据为我自己生成
+ - [usacoTrainning题目列表](https://github.com/rainboyOJ/problems/blob/master/list/usacoTrainning题目列表.md)
+ - [一本通提高篇题目列表](https://github.com/rainboyOJ/problems/blob/master/list/一本通提高篇题目列表.md)
+ - [noip题目列表](https://github.com/rainboyOJ/problems/blob/master/list/noip题目列表.md) 
+
+
 ## 评测
 
 本OJ现在支持`C++,Python3`两种语言，C++ 使用 `G++` 编译，命令形如 `g++ source_file.cpp -o exec_file -DONLINE_JUDGE-std=c++11 -lm`；
