@@ -132,6 +132,11 @@
     url: "/bbs/:id"
     title: '帖子'
     path: '/routes/bbs/bbsShow.yaml'
+- 
+    url: "/bbs_thumbs_up"
+    method: 'POST'
+    title: '点赞'
+    path: '/routes/bbs/bbs_thumbs_up.yaml'
 
 # 发帖/发题解 topic_create
 # 更新贴子    topic_update

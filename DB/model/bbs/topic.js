@@ -34,6 +34,7 @@ var TopicSchema = new Schema({
   last_reply_at: { type: Date, default: Date.now },
 
   ups:[{type:ObjectId,ref:'user'}],  //点赞的人
+  ups_count:{type:Number,default:0}, //点赞的数量
 
   is_del: {type: Boolean, default: false}, //是不是被删除了
 
@@ -50,10 +51,6 @@ TopicSchema.index({uid: 1});
 TopicSchema.index({is_del:1});
 
 TopicSchema.plugin(BaseModel);
-
-TopicSchema.virtual('up_count').get(function(){
-  return this.ups ? this.ups.length : 0;
-})
 
 TopicSchema.virtual('last_reply_at_human').get(function(){
   return this.last_reply_at ? momentCN(this.last_reply_at).fromNow() : null;

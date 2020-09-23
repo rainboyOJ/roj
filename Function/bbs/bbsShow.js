@@ -19,21 +19,30 @@ module.exports = async function bbsShow(ctx,next){
         return doc
       })
   })
-  debug(doc)
-
-  //更新浏览次数
-
-  db.model['topic'].findOneAndUpdate({_id:tid},{ $inc:{visit_count:1} }).exec()
 
   if( !doc ){
     ctx.redirect("/404")
     return
   }
 
+  //更新浏览次数
+  db.model['topic'].findOneAndUpdate({_id:tid},{ $inc:{visit_count:1} }).exec()
+
+
+  let thumbs_uped = false
+  for( let u of doc.ups ){
+    if( u.toString() == ctx.session._id.toString()){
+      thumbs_uped = true
+      break;
+    }
+  }
+
+
   ctx.renderData = {
     ...ctx.renderData,
     topic: doc,
-    user:doc.uid
+    user:doc.uid,
+    thumbs_uped
   }
 
   await next()
