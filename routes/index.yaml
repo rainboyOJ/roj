@@ -113,8 +113,29 @@
     url: "/ranklist"
     title: '天梯'
     path: '/routes/rank/ranklist.yaml'
-    #==== 评测是否结束 ====
 
+# ============ BBS ============
+- 
+    url: "/bbs"
+    title: 'bbs'
+    path: '/routes/bbs/bbsList.yaml'
+- 
+    url: "/bbs_post/:id?"
+    title: '发贴'
+    path: '/routes/bbs/bbsPost.yaml'
+- 
+    url: "/bbs_create"
+    title: '发贴'
+    method: 'POST'
+    path: '/routes/bbs/bbsCreate.yaml'
+- 
+    url: "/bbs/:id"
+    title: '帖子'
+    path: '/routes/bbs/bbsShow.yaml'
+
+# 发帖/发题解 topic_create
+# 更新贴子    topic_update
+# 最新的文章  topic_last
 
 # ============ Admin ============
     #==== 主页 ====

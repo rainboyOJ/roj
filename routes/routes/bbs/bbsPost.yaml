@@ -1,4 +1,4 @@
-# 渲染主页
+# 展示bbs post 页面
 - 
   namespace: 'user'
   name: 'redirect_not_logined' # 如果没有登录就redirect 到/
@@ -10,9 +10,8 @@
   namespace: 'utils'
   name: 'title'
   argument: ''
-- "problem.problem_show"
-- "bbs.bbs_about_problem_count"
+- "bbs.bbsPost"
 - 
-  argument: "problem"
+  argument: "bbs/bbs_create"
   name: Render
   namespace: utils

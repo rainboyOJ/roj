@@ -10,9 +10,7 @@ module.exports = async function problem_show(ctx,next){
     return;
   }
 
-  let doc = await Cache.get(`problem-${pid}`,()=>{
-    return db.model['problem'].findOne({pid}).populate("bestSub.uid","username realname email").then( doc => doc.toObject({virtuals:true}))
-  })
+  let doc = await db.GetOneProblem(pid)
 
   if( !doc){
     ctx.redirect("/404")

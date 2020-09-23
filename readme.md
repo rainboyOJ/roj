@@ -11,15 +11,23 @@
 - nodejs >12.0
 - zip
 - unzip
+- [JudgeServer](https://github.com/rainboyOJ/JudgeServer)
 
 ```
 git clone https://github.com/roj/front-end.git
 git clone https://github.com/roj/roj.git
 cd roj
+git submodule init 
+git submodule update
 cp default_config.yaml config.yaml
 # modify config.yaml
-npm run start
+npm install yarn -g
+yarn 
+yarn start
 ```
+
+
+[详细的安装与使用](./docs/详细的安装与使用.md)
 
 ## 目录
 
@@ -36,11 +44,6 @@ npm run start
 └── default_config.yaml 默认配置
 ```
 
-压缩数据命令
-
-```
-zip -jr -ll data.zip <path>
-```
 
 ## Author
 
