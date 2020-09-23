@@ -33,9 +33,9 @@ module.exports = async function bbsList(ctx,next){
       .skip((page-1)*pageSize)
       .limit(pageSize)
       .populate("uid","email realname username")
+      .populate("pid","pid title")
       .then( docs => docs.map(doc => doc.toJSON({virtuals:true})))
   })
-  debug(docs)
 
   let docs_count = await Cache.get(`problemList-total-size`,()=>{
     return db.model['topic'].find({is_del:false,tab}).countDocuments();
@@ -44,7 +44,9 @@ module.exports = async function bbsList(ctx,next){
   ctx.renderData = {
     ...ctx.renderData,
     topics:docs,
-    pagenation:pageNation(page,docs_count,pageSize)
+    pagenation:pageNation(page,docs_count,pageSize),
+    tab:tab,         //哪个分类
+    tabName: BBS_CONFIG.name[tab] || '未知'
   }
 
   await next()
