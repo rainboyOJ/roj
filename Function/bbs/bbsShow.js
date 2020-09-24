@@ -4,7 +4,7 @@ const {isMongooseObjectId} = require("../../utils")
 const markdown = require("../../markdown-r/index")
 
 module.exports = async function bbsShow(ctx,next){
-    let tid = ctx.params.id
+  let tid = ctx.params.id
 
   if( !isMongooseObjectId(tid)){ //不正确的id
     ctx.redirect("/404")

@@ -1,0 +1,7 @@
+# 评论
+- 
+  namespace: 'user'
+  name: 'redirect_not_logined_for_post' # 如果没有登录就redirect 到/
+- 
+  namespace: 'bbs'
+  name: 'getReply' 

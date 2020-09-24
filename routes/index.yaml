@@ -137,6 +137,20 @@
     method: 'POST'
     title: '点赞'
     path: '/routes/bbs/bbs_thumbs_up.yaml'
+- 
+    url: "/reply/create"
+    method: 'POST'
+    title: '创建评论'
+    path: '/routes/bbs/reply_create.yaml'
+- 
+    url: "/reply/list/:tid/:page"
+    title: '得到评论'
+    path: '/routes/bbs/reply_list.yaml'
+- 
+    url: "/reply/thumbs_up"
+    method: 'POST'
+    title: '点赞回复'
+    path: '/routes/bbs/reply_thumbs_up.yaml'
 
 # 发帖/发题解 topic_create
 # 更新贴子    topic_update
