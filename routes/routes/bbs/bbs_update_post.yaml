@@ -9,10 +9,4 @@
   namespace: 'utils'
   name: 'title'
   argument: ''
-- 
-  namespace: 'bbs'
-  name: 'bbsList'
-- 
-  argument: "bbs/bbs"
-  name: Render
-  namespace: utils
+- "bbs.bbs_update_post"

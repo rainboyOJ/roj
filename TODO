@@ -11,6 +11,11 @@
         - > https://codepen.io/ey_intuitive/pen/bEQpqP
     - [ ] 实现题目搜索功能                                                                                                                            |
         - [x] 使用 https://github.com/iinitd/racci
+- [ ] 细节
+    - [ ] 用户userinfo 显示自己的所有的文章
+    - [ ] 首页显示 最新的文章
+    - [ ] 题目显示相关的讨论
+    - 上面的只一参数不同的现一个操作
 - [ ] minibbs的实现
     - [ ] 留言功能 https://github.com/th720309/node_bbs
     - [ ] 像loj一样只有1层留言 ?

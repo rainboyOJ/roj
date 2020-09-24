@@ -37,7 +37,7 @@ module.exports = async function bbsList(ctx,next){
       .then( docs => docs.map(doc => doc.toJSON({virtuals:true})))
   })
 
-  let docs_count = await Cache.get(`problemList-total-size`,()=>{
+  let docs_count = await Cache.get(`bbsList-total-size`,()=>{
     return db.model['topic'].find({is_del:false,tab}).countDocuments();
   })
 

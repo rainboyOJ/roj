@@ -129,6 +129,15 @@
     method: 'POST'
     path: '/routes/bbs/bbsCreate.yaml'
 - 
+    url: "/bbs_update/:tid"
+    title: '编辑贴子'
+    path: '/routes/bbs/bbs_update.yaml'
+- 
+    url: "/bbs_update"
+    method: 'POST'
+    title: '编辑贴子'
+    path: '/routes/bbs/bbs_update_post.yaml'
+- 
     url: "/bbs/:id"
     title: '帖子'
     path: '/routes/bbs/bbsShow.yaml'
@@ -151,6 +160,11 @@
     method: 'POST'
     title: '点赞回复'
     path: '/routes/bbs/reply_thumbs_up.yaml'
+- 
+    url: "/bbs_list_api/"
+    method: 'POST'
+    title: '得到bbs的列表'
+    path: '/routes/bbs/bbs_list_api.yaml'
 
 # 发帖/发题解 topic_create
 # 更新贴子    topic_update
