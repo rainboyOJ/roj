@@ -17,14 +17,17 @@ module.exports = async function problem_show(ctx,next){
     return
   }
 
+  let html_content = await Cache.get(`problem-${pid}-html_content`,()=>{
+    return markdown.render(doc.content || '题目无内容')
+  })
+
 
   ctx.renderData = {
     ...ctx.renderData,
     problem:{
       ...doc,
-      html_content:markdown.render(doc.content)
+      html_content
     }
   }
-
   await next()
 }
