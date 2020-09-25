@@ -32,6 +32,17 @@ module.exports = async function register(ctx,next){
     }
     return
   }
+  ////同名用户检查
+  user_doc = await db.oneGet({model:'user',query:{realname}})
+  if( user_doc ){
+    ctx.body = {
+      ...ctx.should_ret,
+      status:-1,
+      message:`真初姓名: ${realname} 已经被使用,你可以在名字的后面加上数字,如${realname}1.`
+    }
+    return
+  }
+
   //注册
   try{
     await db.model['user'].create({

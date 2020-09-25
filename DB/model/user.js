@@ -1,10 +1,11 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const {string} = require("joi");
 const Schema = mongoose.Schema;
 //const md5 = require("md5")
 //const getLevel = require("./_libs/getLevel.js")
 
 var _Schema  = new Schema({
-    realname:String,
+    realname:{type:String,unique:true},
     username:{type:String,unique:true},
     password:String,      //不存password,都在存在loginserver
     email:{type:String,unique:true},
@@ -65,6 +66,7 @@ _Schema.pre('save', function(next){
 
 _Schema.index({rank: -1});
 _Schema.index({username: 1});
+_Schema.index({realname: 1});
 _Schema.index({email: 1});
 _Schema.index({is_del: 1});
 
