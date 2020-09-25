@@ -29,7 +29,7 @@ module.exports = async function bbsList(ctx,next){
       ...extra
     })
       .select("-content")
-      .sort({top:1,last_reply_at:-1})
+      .sort({top:-1,last_reply_at:-1})
       .skip((page-1)*pageSize)
       .limit(pageSize)
       .populate("uid","email realname username")

@@ -45,7 +45,7 @@ TopicSchema.index({tab:1})
 TopicSchema.index({refProblem: 1});
 
 TopicSchema.index({create_at: -1});
-TopicSchema.index({top: 1, last_reply_at: -1});
+TopicSchema.index({top: -1, last_reply_at: -1});
 TopicSchema.index({uid: 1});
 //TopicSchema.index({uid: 1, create_at: -1});
 TopicSchema.index({is_del:1});

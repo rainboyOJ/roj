@@ -42,7 +42,7 @@ module.exports = async function bbsList_api(ctx,next){
   let docs = await Cache.get(`bbsList-${JSON.stringify(query)}` ,()=>{
     return db.model['topic'].find(QUERY)
       .select("-content")
-      .sort({top:1,last_reply_at:-1})
+      .sort({top:-1,last_reply_at:-1})
       .skip((page-1)*pageSize)
       .limit(pageSize)
       .populate("uid","email realname username")

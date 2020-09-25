@@ -8,6 +8,8 @@ module.exports = async function bbs_comment_create(ctx,next){
     doc = doc.toJSON({virtuals:true})
     doc.uid.avatar = email2avatar(doc.uid.email,CONFIG)
     doc.html_content= markdown.render(doc.content)
+
+    db.model['topic'].findOneAndUpdate({_id:tid},{last_reply_at:Date.now()}).exec()
   
     ctx.body = {
       status:0,
