@@ -3,7 +3,8 @@ const fs = require("fs");
 const {count, debug} = require("console");
 const {pageNation} = require("../../utils/index")
 const {subList_pageSize} = require("../../lib/DEFINE")
-const Cache = require("../../lib/Cache")
+const Cache = require("../../lib/Cache");
+const Json2QueryUrl = require("../../utils/methods/Json2QueryUrl");
 
 
 module.exports = async function subList(ctx,next){
@@ -14,14 +15,31 @@ module.exports = async function subList(ctx,next){
     return
   }
 
+  let {pid,realname} = ctx.query
   let query = {}
-  let {pid,uid} = ctx.query
-  pid = parseInt(pid)
-  if( !isNaN(pid) ) {
-    let problem = await db.GetOneProblem(pid)
-    query.pid   = problem._id
+  let raw_query = {}
+  if( realname )     {
+    raw_query.realname= realname
+    let user = await Cache.get(`user-${realname}`,()=>{
+      return db.model['user'].findOne({realname})
+    })
+    if( user )
+      query.uid = user._id
+    else
+      query.uid = null
   }
-  if( uid )         query.uid = uid
+
+  pid = parseInt(pid)
+  let queryUrl = ''
+  if( !isNaN(pid) ) {
+    raw_query.pid = pid
+    queryUrl = Json2QueryUrl({...query,pid})
+    let problem = await db.GetOneProblem(pid)
+    if( problem)
+      query.pid   = problem._id
+    else
+      query.pid = null
+  }
 
 
   const pageSize = subList_pageSize; //一页的题目数量
@@ -41,7 +59,9 @@ module.exports = async function subList(ctx,next){
   ctx.renderData = {
     ...ctx.renderData,
     subs:docs,
-    pagenation:pageNation(page,count,pageSize)
+    pagenation:pageNation(page,count,pageSize),
+    queryUrl,
+    query:raw_query
   }
 
   await next()
